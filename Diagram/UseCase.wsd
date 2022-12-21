@@ -1,0 +1,28 @@
+@startuml Admin
+left to right direction
+Admin -left-> (Quản lý thông tin khách hàng)
+Admin -up-> (Quản lý danh mục)
+Admin -right-> (Quản lý nhân viên)
+Admin -up-> (Lập báo cáo)
+Admin --> (Quản lý nhà cung cấp)
+Admin --> (Quản lý hóa đơn nhập)
+Admin --> (Quản lý hóa đơn xuất)
+Admin -up-> (tìm kiếm)
+Admin --> (Đăng nhập)
+Admin -up-> (Quản lý sản phẩm)
+Admin --> (Quản lý thông tin cửa hàng)
+@enduml
+
+@startuml KhachHang
+left to right direction
+KhachHang -up-> (Xem sản phẩm)
+KhachHang -up-> (Xem danh mục)
+KhachHang -left-> (Đặt hàng)
+KhachHang --> (Quản lý giỏ hàng)
+KhachHang -up-> (Tìm kiếm)
+KhachHang -left-> (Đăng nhập)
+KhachHang -right-> (Đăng ký)
+KhachHang -down-> (Sửa thông tin cá nhân)
+KhachHang -right-> (Xem thông tin cửa hàng)
+KhachHang --> (Thanh toán hóa đơn)
+@enduml
