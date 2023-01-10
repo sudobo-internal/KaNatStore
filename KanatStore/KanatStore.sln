@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KanatStore", "KanatStore\KanatStore.csproj", "{B06EAE6E-3075-49EF-ABBC-6FFE26C524AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B06EAE6E-3075-49EF-ABBC-6FFE26C524AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B06EAE6E-3075-49EF-ABBC-6FFE26C524AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B06EAE6E-3075-49EF-ABBC-6FFE26C524AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B06EAE6E-3075-49EF-ABBC-6FFE26C524AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C8871D6-7448-4EF1-B345-7C5FA6213468}
+	EndGlobalSection
+EndGlobal
