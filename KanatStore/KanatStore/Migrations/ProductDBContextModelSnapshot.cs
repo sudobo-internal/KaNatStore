@@ -155,7 +155,6 @@ namespace KanatStore.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MoTa")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SoLuongCo")
@@ -167,7 +166,6 @@ namespace KanatStore.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("TrangThai")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("XuatXu")

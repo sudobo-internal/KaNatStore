@@ -32,10 +32,9 @@ namespace KanatStore.Models
         [DisplayName("Đơn vị")]
         public string DonViTinh { set; get; }
         [DisplayName("Trạng thái")]
-        public string TrangThai { set; get; }
+        public string? TrangThai { set; get; }
         [DisplayName("Mô tả")]
-        public string MoTa { set; get; }
-
+        public string? MoTa { set; get; }
         public virtual DanhMuc DanhMuc { set; get; }
     }
 }
