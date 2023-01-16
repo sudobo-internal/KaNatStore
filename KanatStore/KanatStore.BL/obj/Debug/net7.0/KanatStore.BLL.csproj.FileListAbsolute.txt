@@ -1,0 +1,12 @@
+C:\Users\Linh\Desktop\ThucTap\KanatStore\KanatStore\KanatStore.BL\bin\Debug\net7.0\KanatStore.BLL.deps.json
+C:\Users\Linh\Desktop\ThucTap\KanatStore\KanatStore\KanatStore.BL\bin\Debug\net7.0\KanatStore.BLL.dll
+C:\Users\Linh\Desktop\ThucTap\KanatStore\KanatStore\KanatStore.BL\bin\Debug\net7.0\KanatStore.BLL.pdb
+C:\Users\Linh\Desktop\ThucTap\KanatStore\KanatStore\KanatStore.BL\obj\Debug\net7.0\KanatStore.BLL.csproj.AssemblyReference.cache
+C:\Users\Linh\Desktop\ThucTap\KanatStore\KanatStore\KanatStore.BL\obj\Debug\net7.0\KanatStore.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Linh\Desktop\ThucTap\KanatStore\KanatStore\KanatStore.BL\obj\Debug\net7.0\KanatStore.BLL.AssemblyInfoInputs.cache
+C:\Users\Linh\Desktop\ThucTap\KanatStore\KanatStore\KanatStore.BL\obj\Debug\net7.0\KanatStore.BLL.AssemblyInfo.cs
+C:\Users\Linh\Desktop\ThucTap\KanatStore\KanatStore\KanatStore.BL\obj\Debug\net7.0\KanatStore.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Linh\Desktop\ThucTap\KanatStore\KanatStore\KanatStore.BL\obj\Debug\net7.0\KanatStore.BLL.dll
+C:\Users\Linh\Desktop\ThucTap\KanatStore\KanatStore\KanatStore.BL\obj\Debug\net7.0\refint\KanatStore.BLL.dll
+C:\Users\Linh\Desktop\ThucTap\KanatStore\KanatStore\KanatStore.BL\obj\Debug\net7.0\KanatStore.BLL.pdb
+C:\Users\Linh\Desktop\ThucTap\KanatStore\KanatStore\KanatStore.BL\obj\Debug\net7.0\ref\KanatStore.BLL.dll

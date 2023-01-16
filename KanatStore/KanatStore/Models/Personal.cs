@@ -10,15 +10,15 @@ namespace KanatStore.Models
         [StringLength(100)]
         [Required]
         [DisplayName("Họ tên")]
-        public string HoTen { set; get; }
+        public string FullName { set; get; }
         [DisplayName("Ngày sinh")]
-        public DateTime NgaySinh { set; get; }
+        public DateTime DateOfBirth { set; get; }
         [DisplayName("Giới tính")]
-        public string GioiTinh { set; get; }
+        public string Sex { set; get; }
         [Required]
         [StringLength(11)]
         [DisplayName("SĐT")]
-        public string SDT { set; get; }
+        public string PhoneNumber { set; get; }
         [Required]
         public string Type { set; get; }
     }

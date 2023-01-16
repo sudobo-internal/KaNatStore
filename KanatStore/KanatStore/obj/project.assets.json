@@ -3802,6 +3802,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "KanatStore.DAL/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/KanatStore.DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/KanatStore.DAL.dll": {}
+        }
       }
     }
   },
@@ -10905,11 +10915,17 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "KanatStore.DAL/1.0.0": {
+      "type": "project",
+      "path": "../KanatStore.DAL/KanatStore.DAL.csproj",
+      "msbuildProject": "../KanatStore.DAL/KanatStore.DAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "EntityFramework >= 6.4.4",
+      "KanatStore.DAL >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.1",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.1",
@@ -10923,9 +10939,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Linh\\Desktop\\ThucTap\\KanatStore\\KanatStore\\KanatStore\\KanatStore.csproj",
-      "projectName": "KanatStore",
-      "projectPath": "C:\\Users\\Linh\\Desktop\\ThucTap\\KanatStore\\KanatStore\\KanatStore\\KanatStore.csproj",
+      "projectUniqueName": "C:\\Users\\Linh\\Desktop\\ThucTap\\KanatStore\\KanatStore\\KanatStore\\KanatStore.WebUI.csproj",
+      "projectName": "KanatStore.WebUI",
+      "projectPath": "C:\\Users\\Linh\\Desktop\\ThucTap\\KanatStore\\KanatStore\\KanatStore\\KanatStore.WebUI.csproj",
       "packagesPath": "C:\\Users\\Linh\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Linh\\Desktop\\ThucTap\\KanatStore\\KanatStore\\KanatStore\\obj\\",
       "projectStyle": "PackageReference",
@@ -10943,7 +10959,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Linh\\Desktop\\ThucTap\\KanatStore\\KanatStore\\KanatStore.DAL\\KanatStore.DAL.csproj": {
+              "projectPath": "C:\\Users\\Linh\\Desktop\\ThucTap\\KanatStore\\KanatStore\\KanatStore.DAL\\KanatStore.DAL.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -11004,8 +11024,19 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project KanatStore.DAL is not compatible with net6.0 (.NETCoreApp,Version=v6.0). Project KanatStore.DAL supports: net7.0 (.NETCoreApp,Version=v7.0)",
+      "libraryId": "KanatStore.DAL",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

@@ -28,7 +28,7 @@ namespace KanatStore
             services.AddControllersWithViews();
 
             var connectionString = Configuraion.GetConnectionString("DatabaseInfor");
-            services.AddDbContext<ProductDBContext>(options => options.UseSqlServer(connectionString));
+            services.AddDbContext<KanatStoreDBContext>(options => options.UseSqlServer(connectionString));
         }
 
         //Use this method to configure the HTTP request pipeline

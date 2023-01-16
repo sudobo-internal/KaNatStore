@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vWC3hRhWdXdzy65ak7TTZOZPotIARPqsql2hcy2uxuwt6pcWlkSn4xyokvdsW1xyslUscIqv09/PEdlbg70qFg==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\Linh\\Desktop\\ThucTap\\KanatStore\\KanatStore\\KanatStore\\KanatStore.csproj",
+  "dgSpecHash": "yF8dVRpa8rylj8pjKlaR7eHQGQnaewpSs6sWIMfikrKgs1SLoVzTWbuJsWAxdoWym9yd9m4OYBT5e/Fag9T4Sg==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\Linh\\Desktop\\ThucTap\\KanatStore\\KanatStore\\KanatStore\\KanatStore.WebUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Linh\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Linh\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
@@ -194,5 +194,15 @@
     "C:\\Users\\Linh\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Linh\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project KanatStore.DAL is not compatible with net6.0 (.NETCoreApp,Version=v6.0). Project KanatStore.DAL supports: net7.0 (.NETCoreApp,Version=v7.0)",
+      "libraryId": "KanatStore.DAL",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }
