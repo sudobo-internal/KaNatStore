@@ -12,7 +12,7 @@ namespace KanatStore.DAL.Entities
     {
         public Category()
         {
-            Products = new List<Product>();
+            Products = new List<ProductDetail>();
         }
         [Key]
         public int Id { get; set; }
@@ -21,7 +21,7 @@ namespace KanatStore.DAL.Entities
         public string Name { get; set; }
         [DisplayName("Mô tả")]
         public string Description { get; set; }
-        public virtual ICollection<Product> Products { set; get; }
+        public virtual ICollection<ProductDetail> Products { set; get; }
 
     }
 }

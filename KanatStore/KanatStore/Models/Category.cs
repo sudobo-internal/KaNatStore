@@ -7,7 +7,7 @@ namespace KanatStore.Models
     {
         public Category()
         {
-            Products = new HashSet<Product>();
+            Products = new HashSet<ProductViewModel>();
         }
         [Key]
         public int Id { get; set; }
@@ -16,6 +16,6 @@ namespace KanatStore.Models
         public string Name { get; set; }
         [DisplayName("Mô tả")]
         public string Description { get; set; }
-        public virtual ICollection<Product> Products { set; get; }
+        public virtual ICollection<ProductViewModel> Products { set; get; }
     }
 }
