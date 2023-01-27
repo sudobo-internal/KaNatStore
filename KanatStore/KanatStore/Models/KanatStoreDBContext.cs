@@ -30,7 +30,7 @@ namespace WebApplication2.Models
         //}
 
         public virtual DbSet<Personal> Personals { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<ProductViewModel> Products { get; set; }
         public virtual DbSet<Manufacture> Manufactures { get; set; }
         public virtual DbSet<Bill> Bills { get; set; }
         public virtual DbSet<Category> Categories { get; set; }

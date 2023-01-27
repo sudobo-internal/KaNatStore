@@ -10,3 +10,6 @@ C:\Users\Linh\Desktop\ThucTap\KanatStore\KanatStore\KanatStore.BL\obj\Debug\net7
 C:\Users\Linh\Desktop\ThucTap\KanatStore\KanatStore\KanatStore.BL\obj\Debug\net7.0\refint\KanatStore.BLL.dll
 C:\Users\Linh\Desktop\ThucTap\KanatStore\KanatStore\KanatStore.BL\obj\Debug\net7.0\KanatStore.BLL.pdb
 C:\Users\Linh\Desktop\ThucTap\KanatStore\KanatStore\KanatStore.BL\obj\Debug\net7.0\ref\KanatStore.BLL.dll
+C:\Users\Linh\Desktop\ThucTap\KanatStore\KanatStore\KanatStore.BL\bin\Debug\net7.0\KanatStore.DAL.dll
+C:\Users\Linh\Desktop\ThucTap\KanatStore\KanatStore\KanatStore.BL\bin\Debug\net7.0\KanatStore.DAL.pdb
+C:\Users\Linh\Desktop\ThucTap\KanatStore\KanatStore\KanatStore.BL\obj\Debug\net7.0\KanatStore.BLL.csproj.CopyComplete
