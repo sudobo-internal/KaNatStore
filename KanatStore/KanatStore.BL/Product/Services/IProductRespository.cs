@@ -8,8 +8,8 @@ using KanatStore.DAL.Entities;
 
 namespace KanatStore.BLL.Product.Services
 {
-    public interface IProductRespository:IGenericRepository<ProductDetail>
+    public interface IProductRespository
     {
-         
+        public List<ProductDetail> GetAll();
     }
 }
