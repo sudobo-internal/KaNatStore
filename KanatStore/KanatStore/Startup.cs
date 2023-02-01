@@ -1,8 +1,7 @@
 ﻿//var builder = WebApplication.CreateBuilder(args);
 
+using KanatStore.DAL;
 using Microsoft.EntityFrameworkCore;
-using KanatStore.Models;
-using WebApplication2.Models;
 
 namespace KanatStore
 {

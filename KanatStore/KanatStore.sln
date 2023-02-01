@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KanatStore.BLL", "KanatStor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KanatStore.DAL", "KanatStore.DAL\KanatStore.DAL.csproj", "{13B952B5-E21C-4CF0-996C-DAB638E23E0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KanatStore.UI", "KanatStore.UI\KanatStore.UI.csproj", "{77C9B51A-2DA5-44B6-9BB9-A666B8E97444}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{13B952B5-E21C-4CF0-996C-DAB638E23E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13B952B5-E21C-4CF0-996C-DAB638E23E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13B952B5-E21C-4CF0-996C-DAB638E23E0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77C9B51A-2DA5-44B6-9BB9-A666B8E97444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77C9B51A-2DA5-44B6-9BB9-A666B8E97444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77C9B51A-2DA5-44B6-9BB9-A666B8E97444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77C9B51A-2DA5-44B6-9BB9-A666B8E97444}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

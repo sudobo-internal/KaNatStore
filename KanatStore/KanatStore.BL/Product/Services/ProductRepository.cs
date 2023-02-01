@@ -1,18 +1,29 @@
-﻿using KanatStore.BLL.Generic;
-using KanatStore.DAL;
+﻿using KanatStore.DAL;
 using KanatStore.DAL.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace KanatStore.BLL.Product.Services
 {
-    public class ProductRepository : GenericRepository<ProductDetail>, IProductRespository
+    public class ProductRepository : IProductRespository
     {
-        protected ProductRepository(KanatStoreDBContext dbContext) : base(dbContext)
+        protected readonly KanatStoreDBContext _dbContext;
+        public ProductRepository(KanatStoreDBContext dbContext) 
         {
+            _dbContext = dbContext;
+        }
+
+        public List<ProductDetail> GetAll()
+        {
+            return _dbContext.Products.Include(x=>x.Category).ToList();
+        }
+
+        public ProductDetail GetById(int id)
+        {
+            return _dbContext.Products.Where(x => x.Id == id).FirstOrDefault();
         }
     }
 }

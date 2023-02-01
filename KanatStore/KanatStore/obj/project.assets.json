@@ -10936,9 +10936,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Linh\\Desktop\\ThucTap\\KanatStore\\KanatStore\\KanatStore\\KanatStore.WebUI.csproj",
-      "projectName": "KanatStore.WebUI",
-      "projectPath": "C:\\Users\\Linh\\Desktop\\ThucTap\\KanatStore\\KanatStore\\KanatStore\\KanatStore.WebUI.csproj",
+      "projectUniqueName": "C:\\Users\\Linh\\Desktop\\ThucTap\\KanatStore\\KanatStore\\KanatStore\\KanatStore.webUI.csproj",
+      "projectName": "KanatStore.webUI",
+      "projectPath": "C:\\Users\\Linh\\Desktop\\ThucTap\\KanatStore\\KanatStore\\KanatStore\\KanatStore.webUI.csproj",
       "packagesPath": "C:\\Users\\Linh\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Linh\\Desktop\\ThucTap\\KanatStore\\KanatStore\\KanatStore\\obj\\",
       "projectStyle": "PackageReference",
