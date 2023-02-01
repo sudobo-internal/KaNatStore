@@ -1,0 +1,97 @@
+﻿@model KanatStore.UI.Models.ProductViewModel
+@{
+    ViewBag.Title = "Thêm mới";
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <h1>Thêm mới</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="productDetail.Name" class="control-label"></label>
+                    <input asp-for="productDetail.Name" class="form-control"/>
+                    <span asp-validation-for="productDetail.Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="productDetail.Length" class="control-label"></label>
+                    <input asp-for="productDetail.Length" class="form-control" />
+                    <span asp-validation-for="productDetail.Length" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="productDetail.Width" class="control-label"></label>
+                    <input asp-for="productDetail.Width" class="form-control" />
+                    <span asp-validation-for="productDetail.Width" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="productDetail.Thickness" class="control-label"></label>
+                    <input asp-for="productDetail.Thickness" class="form-control" />
+                    <span asp-validation-for="productDetail.Thickness" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="productDetail.Origin" class="control-label"></label>
+                    <input asp-for="productDetail.Origin" class="form-control" />
+                    <span asp-validation-for="productDetail.Origin" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="productDetail.Image" class="control-label"></label>
+                    <input asp-for="productDetail.Image" class="form-control" />
+                    <span asp-validation-for="productDetail.Image" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="productDetail.Price" class="control-label"></label>
+                    <input asp-for="productDetail.Price" class="form-control" />
+                    <span asp-validation-for="productDetail.Price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="productDetail.ImportPrice" class="control-label"></label>
+                    <input asp-for="productDetail.ImportPrice" class="form-control" />
+                    <span asp-validation-for="productDetail.ImportPrice" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="productDetail.Quantity" class="control-label"></label>
+                    <input asp-for="productDetail.Quantity" class="form-control" />
+                    <span asp-validation-for="productDetail.Quantity" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="productDetail.Unit" class="control-label"></label>
+                    <input asp-for="productDetail.Unit" class="form-control" />
+                    <span asp-validation-for="productDetail.Unit" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="productDetail.Status" class="control-label"></label>
+                    <input asp-for="productDetail.Status" class="form-control" />
+                    <span asp-validation-for="productDetail.Status" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="productDetail.Description" class="control-label"></label>
+                    <input asp-for="productDetail.Description" class="form-control" />
+                    <span asp-validation-for="productDetail.Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="productDetail.CategoryId" class="control-label"></label>
+                    <select asp-for="productDetail.CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Thêm mới" class="btn btn-primary"/>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div>
+        <a asp-action="Index">Quay lại</a>
+    </div>
+    @if (ViewBag.error != null)
+    {
+        <div class="text-danger">
+            @ViewBag.error
+        </div>
+    }
+</body>
+</html>

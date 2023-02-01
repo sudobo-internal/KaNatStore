@@ -1,5 +1,4 @@
-﻿using KanatStore.BLL.Generic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +7,12 @@ using KanatStore.DAL.Entities;
 
 namespace KanatStore.BLL.Product.Services
 {
-    public interface IProductRespository:IGenericRepository<ProductDetail>
+    public interface IProductRespository:CommonRepository
     {
-         
+        public List<ProductDetail> GetAll();
+        public ProductDetail GetById(int id);
+        public void Update(ProductDetail pro);
+        public void Create(ProductDetail pro);
+
     }
 }
