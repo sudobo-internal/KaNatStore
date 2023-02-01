@@ -7,9 +7,12 @@ using KanatStore.DAL.Entities;
 
 namespace KanatStore.BLL.Product.Services
 {
-    public interface IProductRespository
+    public interface IProductRespository:CommonRepository
     {
         public List<ProductDetail> GetAll();
         public ProductDetail GetById(int id);
+        public void Update(ProductDetail pro);
+        public void Create(ProductDetail pro);
+
     }
 }

@@ -48,7 +48,7 @@ namespace KanatStore.UI.Controllers
         // GET: ProductDetails/Create
         public IActionResult Create()
         {
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Description");
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace KanatStore.UI.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Description", productDetail.CategoryId);
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "Id", "Name");
             return View(productDetail);
         }
 

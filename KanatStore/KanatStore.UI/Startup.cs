@@ -1,8 +1,11 @@
 ﻿//var builder = WebApplication.CreateBuilder(args);
 
+using KanatStore.BLL.Categories.Services;
 using KanatStore.BLL.Product.Services;
 using KanatStore.DAL;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 
 namespace KanatStore.UI
@@ -31,6 +34,8 @@ namespace KanatStore.UI
             var connectionString = Configuraion.GetConnectionString("DatabaseInfor");
             services.AddDbContext<KanatStoreDBContext>(options => options.UseSqlServer(connectionString));
             services.AddScoped<IProductRespository, ProductRepository>();
+            services.AddScoped<ICategoryRespository, CategoryRespository>();
+
         }
 
         //Use this method to configure the HTTP request pipeline

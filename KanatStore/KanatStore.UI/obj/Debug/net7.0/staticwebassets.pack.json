@@ -7437,6 +7437,10 @@
       "PackagePath": "staticwebassets\\Images\\nep338.jpg"
     },
     {
+      "Id": "C:\\Users\\Linh\\Desktop\\ThucTap\\KanatStore\\KanatStore\\KanatStore.UI\\wwwroot\\css\\product.css",
+      "PackagePath": "staticwebassets\\css\\product.css"
+    },
+    {
       "Id": "C:\\Users\\Linh\\Desktop\\ThucTap\\KanatStore\\KanatStore\\KanatStore.UI\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XYm94UlQAPGxfon7NFUYB6DJOzHN3ZliPjE2GxZ78Ms=",
+  "Hash": "uoHHCAXZLcbxSjEw2VHmhiipOMVhhw9XhZYvI7c78rI=",
   "Source": "KanatStore.UI",
   "BasePath": "_content/KanatStore.UI",
   "Mode": "Default",
@@ -31584,6 +31584,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Admin\\vendor\\jquery-easing\\jquery.easing.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\Linh\\Desktop\\ThucTap\\KanatStore\\KanatStore\\KanatStore.UI\\wwwroot\\css\\product.css",
+      "SourceId": "KanatStore.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Linh\\Desktop\\ThucTap\\KanatStore\\KanatStore\\KanatStore.UI\\wwwroot\\",
+      "BasePath": "_content/KanatStore.UI",
+      "RelativePath": "css/product.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\product.css"
     },
     {
       "Identity": "C:\\Users\\Linh\\Desktop\\ThucTap\\KanatStore\\KanatStore\\KanatStore.UI\\wwwroot\\css\\site.css",
