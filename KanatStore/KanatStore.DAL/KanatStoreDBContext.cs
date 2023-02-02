@@ -35,7 +35,7 @@ namespace KanatStore.DAL
         }
 
         //public virtual DbSet<Personal> Personals { get; set; }
-        public virtual DbSet<ProductDetail> Products { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
         //public virtual DbSet<Manufacture> Manufactures { get; set; }
         //public virtual DbSet<Bill> Bills { get; set; }
         public virtual DbSet<Category> Categories { get; set; }

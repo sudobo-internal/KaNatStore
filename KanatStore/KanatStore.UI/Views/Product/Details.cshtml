@@ -1,4 +1,4 @@
-﻿@model KanatStore.UI.Models.ProductViewModel
+﻿@model KanatStore.UI.Models.ProductDetailViewModel
 @{
     ViewBag.Title = "Chi tiết sản phẩm";
 }
@@ -15,97 +15,97 @@
             <table>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.productDetail.Name)
+                        @Html.DisplayNameFor(model => model.ProductDetail.Name)
                     </th>
                     <td>
-                        @Html.DisplayFor(model => model.productDetail.Name)
+                            @Html.DisplayFor(model => model.ProductDetail.Name)
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.productDetail.Length)
+                            @Html.DisplayNameFor(model => model.ProductDetail.Length)
                     </th>
                     <td>
-                        @Html.DisplayFor(model => model.productDetail.Length)
+                            @Html.DisplayFor(model => model.ProductDetail.Length)
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.productDetail.Width)
+                            @Html.DisplayNameFor(model => model.ProductDetail.Width)
                     </th>
                     <td>
-                        @Html.DisplayFor(model => model.productDetail.Width)
+                            @Html.DisplayFor(model => model.ProductDetail.Width)
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.productDetail.Thickness)
+                            @Html.DisplayNameFor(model => model.ProductDetail.Thickness)
                     </th>
                     <td>
-                        @Html.DisplayFor(model => model.productDetail.Thickness)
+                            @Html.DisplayFor(model => model.ProductDetail.Thickness)
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.productDetail.Origin)
+                            @Html.DisplayNameFor(model => model.ProductDetail.Origin)
                     </th>
                     <td>
-                        @Html.DisplayFor(model => model.productDetail.Origin)
+                            @Html.DisplayFor(model => model.ProductDetail.Origin)
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.productDetail.Price)
+                            @Html.DisplayNameFor(model => model.ProductDetail.Price)
                     </th>
                     <td>
-                        @Html.DisplayFor(model => model.productDetail.Price)
+                            @Html.DisplayFor(model => model.ProductDetail.Price)
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.productDetail.ImportPrice)
+                            @Html.DisplayNameFor(model => model.ProductDetail.ImportPrice)
                     </th>
                     <td>
-                        @Html.DisplayFor(model => model.productDetail.ImportPrice)
+                            @Html.DisplayFor(model => model.ProductDetail.ImportPrice)
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.productDetail.Quantity)
+                            @Html.DisplayNameFor(model => model.ProductDetail.Quantity)
                     </th>
                     <td>
-                        @Html.DisplayFor(model => model.productDetail.Quantity)
+                            @Html.DisplayFor(model => model.ProductDetail.Quantity)
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.productDetail.Unit)
+                            @Html.DisplayNameFor(model => model.ProductDetail.Unit)
                     </th>
                     <td>
-                        @Html.DisplayFor(model => model.productDetail.Unit)
+                            @Html.DisplayFor(model => model.ProductDetail.Unit)
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.productDetail.Status)
+                            @Html.DisplayNameFor(model => model.ProductDetail.Status)
                     </th>
                     <td>
-                        @Html.DisplayFor(model => model.productDetail.Status)
+                            @Html.DisplayFor(model => model.ProductDetail.Status)
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        @Html.DisplayNameFor(model => model.productDetail.Category.Name)
+                            @Html.DisplayNameFor(model => model.ProductDetail.CategoryName)
                     </th>
                     <td>
-                        @Html.DisplayFor(model => model.productDetail.Category.Name)
+                            @Html.DisplayFor(model => model.ProductDetail.CategoryName)
                     </td>
                 </tr>
             </table>
         </div>
         <div class="col-md-8">
             @{
-                string path = "~/Images/" + Model.productDetail.Image;
+                    string path = "~/Images/" + Model.ProductDetail.Image;
              }
             <img src="@Url.Content(path)" width="400px" alt="ảnh" class="img-thumbnail"/>
         </div>
@@ -113,8 +113,8 @@
     </div>
     <hr />
     <div class="row">
-        <b>@Html.DisplayNameFor(model => model.productDetail.Description):</b>
-        @Html.DisplayFor(model => model.productDetail.Description)
+        <b>@Html.DisplayNameFor(model => model.ProductDetail.Description):</b>
+        @Html.DisplayFor(model => model.ProductDetail.Description)
     </div>
 </body>
 </html>

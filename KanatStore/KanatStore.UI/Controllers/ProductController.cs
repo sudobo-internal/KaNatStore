@@ -1,5 +1,6 @@
 ﻿using KanatStore.BLL.Categories.Services;
 using KanatStore.BLL.Product.Services;
+using KanatStore.DAL.Entities;
 using KanatStore.UI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -8,26 +9,32 @@ namespace KanatStore.UI.Controllers
 {
     public class ProductController : Controller
     {
-        protected readonly IProductRespository _productRespository;
-        protected readonly ICategoryRespository _categoryRespository;
+        private readonly IProductRespository _productRespository;
+        private readonly ICategoryRespository _categoryRespository;
+        /// <summary>
+        /// Contructor
+        /// </summary>
+        /// <param name="productResporitory"></param>
+        /// <param name="categoryRespository"></param>
         public ProductController(IProductRespository productResporitory, ICategoryRespository categoryRespository)
         {
-            _productRespository= productResporitory;
-            _categoryRespository= categoryRespository;
+            _productRespository = productResporitory;
+            _categoryRespository = categoryRespository;
         }
+       
         //GET: Products
         public IActionResult Index()
         {
             ProductViewModel prod = new ProductViewModel();
-            prod.products = _productRespository.GetAll();
+            prod.Products = _productRespository.GetAll();
             return View(prod);
         }
         //GET: Product/Details/1
         public IActionResult Details(int id)
         {
-            ProductViewModel pro = new ProductViewModel();
-            pro.productDetail = _productRespository.GetById(id);
-            if(pro.productDetail == null || id == null)
+            ProductDetailViewModel pro = new ProductDetailViewModel();
+            pro.ProductDetail = _productRespository.GetById(id);
+            if (pro.ProductDetail == null || id == null)
             {
                 return NotFound();
             }
@@ -36,21 +43,24 @@ namespace KanatStore.UI.Controllers
         //GET: Product/Create
         public IActionResult Create()
         {
+            //khoi tao viewmodel truyen vao view
+            ProductDetailViewModel product = new ProductDetailViewModel();
+            product.ProductDetail = new BLL.Dto.ProductDto();
             ViewBag.CategoryId = new SelectList(_categoryRespository.GetAll(), "Id", "Name");
-            return View();
+            return View(product);
         }
 
         //POST: Product/Create
         //To protect from overposting attacks, enable the specific properties you wan to bind to.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Id,Name,Length,Width,Thickness,Origin,Image,Price,ImportPrice,Quantity,Unit,Status,Description,CategoryId")] ProductViewModel pro)
+        public IActionResult Create(ProductDetailViewModel pro)
         {
             try
             {
-                if(ModelState.IsValid)
+                if (ModelState.IsValid)
                 {
-                    _productRespository.Create(pro.productDetail);
+                    _productRespository.Create(pro.ProductDetail);
                     _productRespository.Save();
                 }
                 ViewBag.CategoryId = new SelectList(_categoryRespository.GetAll(), "Id", "Name");
@@ -59,7 +69,7 @@ namespace KanatStore.UI.Controllers
             catch (Exception ex)
             {
                 ViewBag.error = "Thêm mới không thành công" + ex.Message;
-                return View(pro.productDetail);
+                return View(pro.ProductDetail);
             }
         }
     }

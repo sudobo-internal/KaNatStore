@@ -3,6 +3,7 @@ using KanatStore.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KanatStore.DAL.Migrations
 {
     [DbContext(typeof(KanatStoreDBContext))]
-    partial class KanatStoreDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230202023103_EditProducDetail")]
+    partial class EditProducDetail
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,105 +28,91 @@ namespace KanatStore.DAL.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("Id");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(500)")
-                        .HasColumnName("Description");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("Name");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Category");
+                    b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("KanatStore.DAL.Entities.Product", b =>
+            modelBuilder.Entity("KanatStore.DAL.Entities.ProductDetail", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("Id");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("CategoryId")
-                        .HasColumnType("int")
-                        .HasColumnName("CategoryId");
+                        .HasColumnType("int");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(200)")
-                        .HasColumnName("Description");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("Image");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("ImportPrice")
-                        .HasColumnType("float")
-                        .HasColumnName("ImportPrice");
+                        .HasColumnType("float");
 
                     b.Property<float>("Length")
-                        .HasColumnType("real")
-                        .HasColumnName("Length");
+                        .HasColumnType("real");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("Name");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Origin")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Origin");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Price")
-                        .HasColumnType("float")
-                        .HasColumnName("Price");
+                        .HasColumnType("float");
 
                     b.Property<int>("Quantity")
-                        .HasColumnType("int")
-                        .HasColumnName("Quantity");
+                        .HasColumnType("int");
 
                     b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Status");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("Thickness")
-                        .HasColumnType("real")
-                        .HasColumnName("Thickness");
+                        .HasColumnType("real");
 
                     b.Property<string>("Unit")
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Unit");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("Width")
-                        .HasColumnType("real")
-                        .HasColumnName("Width");
+                        .HasColumnType("real");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Product");
+                    b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("KanatStore.DAL.Entities.Product", b =>
+            modelBuilder.Entity("KanatStore.DAL.Entities.ProductDetail", b =>
                 {
-                    b.HasOne("KanatStore.DAL.Entities.Category", null)
+                    b.HasOne("KanatStore.DAL.Entities.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("KanatStore.DAL.Entities.Category", b =>

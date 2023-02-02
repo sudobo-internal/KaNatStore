@@ -1,11 +1,16 @@
-﻿using KanatStore.DAL.Entities;
+﻿using KanatStore.BLL.Dto;
+using KanatStore.DAL.Entities;
 
 namespace KanatStore.UI.Models
 {
     public class ProductViewModel
     {
-        public List<ProductDetail> products { get; set; }
-        public ProductDetail productDetail { get; set; }
-        public List<Category> categories { get; set; }
+        public ProductViewModel() {
+            Products = new List<ProductDto>();
+            Categories = new List<Category>();
+        }
+        public List<ProductDto> Products { get; set; }
+        //public ProductDto productDetail { get; set; }
+        public List<Category> Categories { get; set; }
     }
 }

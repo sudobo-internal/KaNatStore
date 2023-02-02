@@ -1,4 +1,4 @@
-﻿@model KanatStore.UI.Models.ProductViewModel
+﻿@model KanatStore.UI.Models.ProductDetailViewModel
 @{
     ViewBag.Title = "Thêm mới";
 }
@@ -13,70 +13,78 @@
     <div class="row">
         <div class="col-md-4">
             <form asp-action="Create" method="post">
-                <div asp-validation-summary="All" class="text-danger"></div>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="productDetail.Name" class="control-label"></label>
-                    <input asp-for="productDetail.Name" class="form-control"/>
-                    <span asp-validation-for="productDetail.Name" class="text-danger"></span>
+                    <label asp-for="ProductDetail.Name" class="control-label"></label>
+                    <input asp-for="ProductDetail.Name" class="form-control" />
+                    <span asp-validation-for="ProductDetail.Name" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="productDetail.Length" class="control-label"></label>
-                    <input asp-for="productDetail.Length" class="form-control" />
-                    <span asp-validation-for="productDetail.Length" class="text-danger"></span>
+                    <label asp-for="ProductDetail.Length" class="control-label"></label>
+                    <input asp-for="ProductDetail.Length" class="form-control" />
+                    <span asp-validation-for="ProductDetail.Length" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="productDetail.Width" class="control-label"></label>
-                    <input asp-for="productDetail.Width" class="form-control" />
-                    <span asp-validation-for="productDetail.Width" class="text-danger"></span>
+                    <label asp-for="ProductDetail.Width" class="control-label"></label>
+                    <input asp-for="ProductDetail.Width" class="form-control" />
+                    <span asp-validation-for="ProductDetail.Width" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="productDetail.Thickness" class="control-label"></label>
-                    <input asp-for="productDetail.Thickness" class="form-control" />
-                    <span asp-validation-for="productDetail.Thickness" class="text-danger"></span>
+                    <label asp-for="ProductDetail.Thickness" class="control-label"></label>
+                    <input asp-for="ProductDetail.Thickness" class="form-control" />
+                    <span asp-validation-for="ProductDetail.Thickness" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="productDetail.Origin" class="control-label"></label>
-                    <input asp-for="productDetail.Origin" class="form-control" />
-                    <span asp-validation-for="productDetail.Origin" class="text-danger"></span>
+                    <label asp-for="ProductDetail.Origin" class="control-label"></label>
+                    <input asp-for="ProductDetail.Origin" class="form-control" />
+                    <span asp-validation-for="ProductDetail.Origin" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="productDetail.Image" class="control-label"></label>
-                    <input asp-for="productDetail.Image" class="form-control" />
-                    <span asp-validation-for="productDetail.Image" class="text-danger"></span>
+                    <label asp-for="ProductDetail.Image" class="control-label"></label>
+                    <input asp-for="ProductDetail.Image" class="form-control" />
+                    <span asp-validation-for="ProductDetail.Image" class="text-danger"></span>
+                    @*<label asp-for="ProductDetail.Image" class="control-lable">Hình ảnh</label>
+                    <p>
+                        <button type="button" onclick="$('#image_file').click()" class="btn btn-warning" style="margin-top: 10px;" id="btn_upload_file">Tải ảnh lên</button>
+                    </p>
+                    <input style="display:none;" class="form-control upload-thumbnail margin-bottom-15" type="file" id="image_file"/>
+                    <input onchange="changeThumbnail()" asp-for="ProductDetail.Image" class="form-control" style="display: none"/>
+                    <span asp-validation-for="ProductDetail.Image" class="text-danger"></span>
+                    <img src="" style="width:100%; display: none; max-height: 200px" id="thumbnail-img" />*@
                 </div>
                 <div class="form-group">
-                    <label asp-for="productDetail.Price" class="control-label"></label>
-                    <input asp-for="productDetail.Price" class="form-control" />
-                    <span asp-validation-for="productDetail.Price" class="text-danger"></span>
+                    <label asp-for="ProductDetail.Price" class="control-label"></label>
+                    <input asp-for="ProductDetail.Price" class="form-control" />
+                    <span asp-validation-for="ProductDetail.Price" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="productDetail.ImportPrice" class="control-label"></label>
-                    <input asp-for="productDetail.ImportPrice" class="form-control" />
-                    <span asp-validation-for="productDetail.ImportPrice" class="text-danger"></span>
+                    <label asp-for="ProductDetail.ImportPrice" class="control-label"></label>
+                    <input asp-for="ProductDetail.ImportPrice" class="form-control" />
+                    <span asp-validation-for="ProductDetail.ImportPrice" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="productDetail.Quantity" class="control-label"></label>
-                    <input asp-for="productDetail.Quantity" class="form-control" />
-                    <span asp-validation-for="productDetail.Quantity" class="text-danger"></span>
+                    <label asp-for="ProductDetail.Quantity" class="control-label"></label>
+                    <input asp-for="ProductDetail.Quantity" class="form-control" />
+                    <span asp-validation-for="ProductDetail.Quantity" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="productDetail.Unit" class="control-label"></label>
-                    <input asp-for="productDetail.Unit" class="form-control" />
-                    <span asp-validation-for="productDetail.Unit" class="text-danger"></span>
+                    <label asp-for="ProductDetail.Unit" class="control-label"></label>
+                    <input asp-for="ProductDetail.Unit" class="form-control" />
+                    <span asp-validation-for="ProductDetail.Unit" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="productDetail.Status" class="control-label"></label>
-                    <input asp-for="productDetail.Status" class="form-control" />
-                    <span asp-validation-for="productDetail.Status" class="text-danger"></span>
+                    <label asp-for="ProductDetail.Status" class="control-label"></label>
+                    <input asp-for="ProductDetail.Status" class="form-control" />
+                    <span asp-validation-for="ProductDetail.Status" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="productDetail.Description" class="control-label"></label>
-                    <input asp-for="productDetail.Description" class="form-control" />
-                    <span asp-validation-for="productDetail.Description" class="text-danger"></span>
+                    <label asp-for="ProductDetail.Description" class="control-label"></label>
+                    <input asp-for="ProductDetail.Description" class="form-control" />
+                    <span asp-validation-for="ProductDetail.Description" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="productDetail.CategoryId" class="control-label"></label>
-                    <select asp-for="productDetail.CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                    <label asp-for="ProductDetail.CategoryId" class="control-label"></label>
+                    <select asp-for="ProductDetail.CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Thêm mới" class="btn btn-primary"/>
@@ -95,3 +103,37 @@
     }
 </body>
 </html>
+
+@section JS{
+    <script type="text/javascript">
+        $(function(){
+            changeThumbnail()
+        })
+        function changeThumbnail(){
+            if ($('#ProductDetail.Image').val()!=''){
+                $('#thumbnail-img').attr('src', $('#ProductDetail.Image').val())
+                $('#thumbnail-img').show()
+            } else {
+                $('#thumbnail-img').hide()
+            }
+        }
+         $("#image_file").change(function (e) {
+            if ($(this).val() != "") {
+                $('#btn_upload_file').html('Đang tải ảnh...')
+                uploadFile(e, 'Icon')
+            }
+        });
+
+        $('#ProductDetail.Image').change(function() {
+            console.log($('#ProductDetail.Image').val())
+            $('#btn_upload_file').html('Tải ảnh lên')
+            if ($('#ProductDetail.Image').val() == "") {
+                $('#thumbnail-img').hide()
+            } else {
+                $('#thumbnail-img').show()
+            }
+
+            $('#thumbnail-img').attr('src', $('#ProductDetail.Image').val())
+        })
+    </script>
+}
