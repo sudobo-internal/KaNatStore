@@ -1,45 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace KanatStore.DAL.Entities
 {
+    [Table("Product")]
     public class Product
     {
         [Key]
+        [Column("Id")]
         public int Id { get; set; }
-        [Required]
         [StringLength(50)]
-        [DisplayName("Tên sản phẩm")]
+        [Column("Name", TypeName = "nvarchar(100)")]
         public string Name { get; set; }
-        [DisplayName("Chiều dài")]
+        [Column("Length", TypeName = "real")]
         public float Length { get; set; }
-        [DisplayName("Chiều rộng")]
+        [Column("Width", TypeName = "real")]
         public float Width { get; set; }
-        [DisplayName("Chiều dày")]
+        [Column("Thickness", TypeName = "real")]
         public float Thickness { get; set; }
-        [DisplayName("Xuất xứ")]
+        [Column("Origin", TypeName = "nvarchar(50)")]
         public string Origin { get; set; }
-        [DisplayName("Hình ảnh")]
-        public string Image { get; set; }
-        [DisplayName("Giá bán")]
+        [Column("Image", TypeName = "nvarchar(100)")]
+        public string? Image { get; set; }
+        [Column("Price", TypeName = "float")]
         public double Price { get; set; }
-        [DisplayName("Giá nhập")]
+        [Column("ImportPrice", TypeName = "float")]
         public double ImportPrice { get; set; }
-        [DisplayName("Số lượng có")]
+        [Column("Quantity", TypeName = "int")]
         public int Quantity { get; set; }
-        [DisplayName("Đơn vị")]
-        public string Unit { get; set; }
-        [DisplayName("Trạng thái")]
-        public string? Status { get; set; }
-        [DisplayName("Mô tả")]
+        [Column("Unit", TypeName = "nvarchar(50)")]
+        public string? Unit { get; set; }
+        [Column("Status", TypeName = "nvarchar(50)")]
+        public string Status { get; set; }
+        [Column("Description", TypeName = "nvarchar(200)")]
         public string? Description { get; set; }
-        public int? CategoryId { get; set; }
-        public virtual Category Category { get; set; }
+        [Column("CategoryId", TypeName = "int")]
+        public int CategoryId { get; set; }
     }
 }
