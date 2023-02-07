@@ -42,7 +42,7 @@
             <hr class="sidebar-divider">
 
             <li class="nav-item">
-                <a class="nav-link" href="/Product/Index.html">
+                <a class="nav-link" href="/Product/Index">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Quản lý sản phẩm</span>
                 </a>
@@ -292,7 +292,6 @@
             </div>
         </div>
     </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="/Admin/vendor/jquery/jquery.min.js"></script>
     <script src="/Admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -309,7 +308,7 @@
     <!-- Page level custom scripts -->
     <script src="/Admin/js/demo/chart-area-demo.js"></script>
     <script src="/Admin/js/demo/chart-pie-demo.js"></script>
-
+    <script src="/js/upload.js"></script>
+    @RenderSection("JS", required: false)
 </body>
 </html>
-@RenderSection("JS", required: false)

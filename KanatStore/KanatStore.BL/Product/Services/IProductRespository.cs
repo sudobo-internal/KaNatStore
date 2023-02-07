@@ -11,8 +11,9 @@ namespace KanatStore.BLL.Product.Services
     {
         public List<ProductDto> GetAll();
         public ProductDto GetById(int id);
-        //public void Update(ProductDto pro);
         public void Create(ProductDto pro);
+        public bool Update(ProductDto pro);
+        public bool Delete(int id);
 
     }
 }

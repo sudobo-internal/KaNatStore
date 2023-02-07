@@ -1,9 +1,9 @@
 ﻿using KanatStore.BLL.Categories.Services;
 using KanatStore.BLL.Product.Services;
-using KanatStore.DAL.Entities;
 using KanatStore.UI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 
 namespace KanatStore.UI.Controllers
 {
@@ -34,7 +34,7 @@ namespace KanatStore.UI.Controllers
         {
             ProductDetailViewModel pro = new ProductDetailViewModel();
             pro.ProductDetail = _productRespository.GetById(id);
-            if (pro.ProductDetail == null || id == null)
+            if (pro.ProductDetail == null)
             {
                 return NotFound();
             }
@@ -50,6 +50,8 @@ namespace KanatStore.UI.Controllers
             return View(product);
         }
 
+        
+        
         //POST: Product/Create
         //To protect from overposting attacks, enable the specific properties you wan to bind to.
         [HttpPost]
@@ -69,6 +71,47 @@ namespace KanatStore.UI.Controllers
             catch (Exception ex)
             {
                 ViewBag.error = "Thêm mới không thành công" + ex.Message;
+                return View(pro.ProductDetail);
+            }
+        }
+        
+        //GET: Product/Edit/1
+        public IActionResult Edit(int id)
+        {
+            if (id.ToString() == null)
+                return NotFound();
+            ViewBag.CategoryId = new SelectList(_categoryRespository.GetAll(), "Id", "Name");
+            //khởi tạo product 
+            ProductDetailViewModel pro = new ProductDetailViewModel();
+            //lấy ra product có mã bằng id
+            pro.ProductDetail = _productRespository.GetById(id);
+            return View(pro);
+        }
+
+        //POST: Product/Edit/1
+        //To protect from overposting attacks, enable the specific properties you want to bind to
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int id, ProductDetailViewModel pro)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    if (_productRespository.Update(pro.ProductDetail))
+                    {
+                        ViewBag.mess = "Sửa thành công";
+                        _productRespository.Save();
+                    }
+                    else
+                        ViewBag.mess = "Sửa thất bại";
+                }
+                ViewBag.CategoryId = new SelectList(_categoryRespository.GetAll(), "Id", "Name");
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                ViewBag.error = "Sửa không thành công" + ex.Message;
                 return View(pro.ProductDetail);
             }
         }
