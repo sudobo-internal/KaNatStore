@@ -70,12 +70,18 @@
                     </td>
                     <td>
                         @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |*@
+                        <a class="fas fa-fw fa-adjust" asp-action="Edit" asp-route-id="@item.Id"></a>|
                         <a class="fas fa-fw fa-info-circle" asp-action="Details" asp-route-id="@item.Id"></a> |
                         <a class="fas fa-fw fa-trash" asp-action="Delete" asp-route-id="@item.Id"></a>
+                        
                     </td>
                 </tr>
             }
         </tbody>
     </table>
+    @if (ViewBag.mess != null)
+    {
+        <p style="color: red">@ViewBag.mess</p>
+    }
 </body>
 </html>

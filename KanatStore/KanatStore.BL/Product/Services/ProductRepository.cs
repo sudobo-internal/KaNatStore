@@ -182,7 +182,23 @@ namespace KanatStore.BLL.Product.Services
         /// <exception cref="NotImplementedException"></exception>
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var idfind = _dbContext.Products.Where(x => x.Id == id).FirstOrDefault();
+            if (idfind == null)
+                return false;
+            else
+            {
+                var proFind = (from p in _dbContext.Products
+                               join c in _dbContext.Categories
+                               on p.CategoryId equals c.Id
+                               where p.Id == id
+                               select p).FirstOrDefault();
+                if (proFind == null) return false;
+                else
+                {
+                    _dbContext.Products.Remove(proFind);
+                    return true;
+                }
+            }
         }
     }
 }

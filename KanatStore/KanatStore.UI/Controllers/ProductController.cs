@@ -50,8 +50,6 @@ namespace KanatStore.UI.Controllers
             return View(product);
         }
 
-        
-        
         //POST: Product/Create
         //To protect from overposting attacks, enable the specific properties you wan to bind to.
         [HttpPost]
@@ -111,7 +109,45 @@ namespace KanatStore.UI.Controllers
             }
             catch (Exception ex)
             {
-                ViewBag.error = "Sửa không thành công" + ex.Message;
+                ViewBag.error = "Thay đổi không thành công" + ex.Message;
+                return View(pro.ProductDetail);
+            }
+        }
+        //GET: Product/Edit/1
+        public IActionResult Delete(int id)
+        {
+            if (id.ToString() == null)
+                return NotFound();
+            ViewBag.CategoryId = new SelectList(_categoryRespository.GetAll(), "Id", "Name");
+            //khởi tạo product 
+            ProductDetailViewModel pro = new ProductDetailViewModel();
+            //lấy ra product có mã bằng id
+            pro.ProductDetail = _productRespository.GetById(id);
+            return View(pro);
+        }
+
+        //POST: Product/Edit/1
+        //To protect from overposting attacks, enable the specific properties you want to bind to
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(int id, ProductDetailViewModel pro)
+        {
+            try
+            {
+                
+                if (_productRespository.Delete(id))
+                {
+                    ViewBag.mess = "Xóa thành công";
+                    _productRespository.Save();
+                }
+                else
+                    ViewBag.mess = "Xóa thất bại";
+                ViewBag.CategoryId = new SelectList(_categoryRespository.GetAll(), "Id", "Name");
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                ViewBag.error = "Xóa không thành công" + ex.Message;
                 return View(pro.ProductDetail);
             }
         }

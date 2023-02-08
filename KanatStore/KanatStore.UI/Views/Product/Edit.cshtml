@@ -7,12 +7,13 @@
     <head>
     </head>
     <body>
-    <h1>Thêm mới</h1>
+    <h1>Sửa sản phẩm</h1>
     <hr />
     <div class="row">
         <div class="col-md-4">
-            <form asp-action="Create">
+            <form asp-action="Edit">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="ProductDetail.Id" />
                 <div class="form-group">
                     <label asp-for="ProductDetail.Name" class="control-label"></label>
                     <input asp-for="ProductDetail.Name" class="form-control" />
@@ -82,7 +83,7 @@
                     <select asp-for="ProductDetail.CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
                 </div>
                 <div class="form-group">
-                    <input asp-page-handler="Upload" type="submit" value="Thêm mới" class="btn btn-primary" />
+                    <input type="submit" value="Lưu thay đổi" class="btn btn-primary" />
                 </div>
             </form>
         </div>

@@ -6,7 +6,7 @@ function uploadFile(e, target_id) {
   }
 
   
-  var url = '//'+window.location.host+'/Api/Upload'
+    var url = '//' + 'localhost:5231/' +'/Api/Upload'
   var xhr = new XMLHttpRequest();
   var fd = new FormData();
   xhr.open('POST', url, true);

@@ -53,10 +53,10 @@
                     <p>
                             <button type="button" onclick="$('#thumbnail_file').click()" class="btn btn-warning" style="margin-top: 10px;" id="btn_upload_file">Tải ảnh lên</button>
                     </p>
-                    <input style="display: none;" class="form-control upload-thumbnail margin-bottom-15" type="file" id="thumbnail_file"/>
-                    <input onchange="changeThumbnail()" asp-for="ProductDetail.Image" class="form-control" style="display: none" />
+                    <input style="display: ;" class="form-control upload-thumbnail margin-bottom-15" type="file" id="thumbnail_file"/>
+                    <input onchange="changeThumbnail()" asp-for="ProductDetail.Image" class="form-control" />
                     <span asp-validation-for="ProductDetail.Image" class="text-danger"></span>
-                    <img src="" style="width:100%; display: none; max-height: 200px" id="thumbnail-img" />
+                    <img src="/Images/noimg.jpg" style="width:100%; display; max-height: 200px" id="thumbnail-img" alt="ảnh"/>
                     @*@Html.LabelFor(model=>model.ProductDetail.Image, htmlAttributes: new{@class="control-label col-md-2"})
                     <div class="col-md-10">
                         <input type="file" name="Image" id="Image" style="width: 100%;"/>
@@ -121,28 +121,33 @@
     }
 @section JS {
 <script type="text/javascript">
-    $(function () {
+    $(document).ready(function(){
+        $(function () {
         changeThumbnail()                
     })
 
     function changeThumbnail() {
+        console.log($('Hi11' + #ProductDetail.Image').val())
         if ($('#ProductDetail.Image').val() != '') {
             $('#thumbnail-img').attr('src', $('#ProductDetail.Image').val())
             $('#thumbnail-img').show()
         } else {
             $('#thumbnail-img').hide()
         }
+        console.log($('Hi1' + #ProductDetail.Image').val())
     }
 
     $("#thumbnail_file").change(function (e) {
+        console.log($('Hi21' + #ProductDetail.Image').val())
         if ($(this).val() != "") {
             $('#btn_upload_file').html('Đang tải ảnh...')
             uploadFile(e,'ProductDetail.Image')
-            $('#btn_upload_file').html($('#ProductDetail.Image').val() + 'Hi')
+            console.log($('Hi2' + #ProductDetail.Image').val())
         }
     });
 
     $('#ProductDetail.Image').change(function () {
+        console.log($('Hi31' + #ProductDetail.Image').val())
         console.log($('#ProductDetail.Image').val())
         $('#btn_upload_file').html('Tải ảnh lên')
         if ($('#ProductDetail.Image').val() == "") {
@@ -150,9 +155,10 @@
         } else {
             $('#thumbnail-img').show()
         }
-
         $('#thumbnail-img').attr('src', $('#ProductDetail.Image').val())
+        console.log($('Hi3' + #ProductDetail.Image').val())
     })
+})
 </script>
 }
 </body>

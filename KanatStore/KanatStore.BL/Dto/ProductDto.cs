@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace KanatStore.BLL.Dto
 {
@@ -21,7 +22,6 @@ namespace KanatStore.BLL.Dto
         public string Origin { get; set; }
         [DisplayName("Hình ảnh")]
         public string? Image { get; set; }
-        public IFormFile FileUpload { get; set; } 
         [DisplayName("Giá bán")]
         public double Price { get; set; }
         [DisplayName("Giá nhập")]

@@ -32,7 +32,7 @@ namespace KanatStore.UI
 
             services.AddSession(option =>
             {
-                option.IdleTimeout = TimeSpan.FromMinutes(50);
+                option.IdleTimeout = TimeSpan.FromMinutes(10);
             });
             services.AddControllersWithViews();
 
