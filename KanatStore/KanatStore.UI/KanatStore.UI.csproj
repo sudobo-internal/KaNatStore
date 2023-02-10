@@ -2567,6 +2567,7 @@
   <ItemGroup>
     <Folder Include="bin\Debug\net7.0\ref\" />
     <Folder Include="wwwroot\.vs\wwwroot\FileContentIndex\merges\" />
+    <Folder Include="wwwroot\uploads\2023\" />
   </ItemGroup>
 
 </Project>

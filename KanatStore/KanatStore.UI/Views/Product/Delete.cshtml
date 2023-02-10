@@ -100,10 +100,7 @@
                 </table>
             </div>
             <div class="col-md-8">
-                @{
-                    string path = "~/Images/" + Model.ProductDetail.Image;
-                }
-                <img src="@Url.Content(path)" width="400px" alt="ảnh" class="img-thumbnail" />
+                <img src="@Model.ProductDetail.Image" width="100" alt="ảnh" class="img-thumbnail" />
             </div>
         </div>
     </div>

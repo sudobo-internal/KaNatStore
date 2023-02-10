@@ -40,9 +40,14 @@
                     <span asp-validation-for="ProductDetail.Origin" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="ProductDetail.Image" class="control-label"></label>
-                    <input asp-for="ProductDetail.Image" class="form-control" type="file" onsubmit="AJAXSubmit(this);return false;" />
+                    <label asp-for="ProductDetail.Image" class="control-lable">Hình ảnh</label>
+                    <p>
+                        <button type="button" onclick="$('#thumbnail_file').click()" class="btn btn-warning" style="margin-top: 10px;" id="btn_upload_file">Tải ảnh lên</button>
+                    </p>
+                    <input style="display: none;" class="form-control upload-thumbnail margin-bottom-15" type="file" id="thumbnail_file" />
+                    <input onchange="changeThumbnail()" asp-for="ProductDetail.Image" class="form-control" style="display: none;" />
                     <span asp-validation-for="ProductDetail.Image" class="text-danger"></span>
+                    <img src="@Model.ProductDetail.Image" style="width:100%; display; max-height: 200px" id="thumbnail-img" alt="ảnh" />
                 </div>
                 <div class="form-group">
                     <label asp-for="ProductDetail.Price" class="control-label"></label>
@@ -97,5 +102,39 @@
             @ViewBag.error
         </div>
     }
+@section JS {
+<script type="text/javascript">
+    $(function() {
+            changeThumbnail()
+    })
+    
+    function changeThumbnail() {
+        if ($('#ProductDetail_Image').val() != '') {
+            $('#thumbnail-img').attr('src', $('#ProductDetail_Image').val())
+            $('#thumbnail-img').show()
+        } else {
+             $('#thumbnail-img').hide()
+                }
+        }
+    $("#thumbnail_file").change(function (e) {
+        if ($(this).val() != "") {
+            console.log($('#ProductDetail_Image').val());
+            $('#btn_upload_file').html('Đang tải ảnh...')
+            uploadFile(e,'ProductDetail_Image')
+        }
+    });
+
+        $('#ProductDetail_Image').change(function() {
+        console.log('haha' + $('#ProductDetail_Image').val())
+        $('#btn_upload_file').html('Tải ảnh lên')
+        if ($('#ProductDetail_Image').val() == "") {
+            $('#thumbnail-img').hide()
+        } else {
+            $('#thumbnail-img').show()
+        }
+        $('#thumbnail-img').attr('src', $('#ProductDetail_Image').val())
+     });
+</script>
+}
     </body>
 </html>

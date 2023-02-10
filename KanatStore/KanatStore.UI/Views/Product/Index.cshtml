@@ -47,11 +47,7 @@
                         @Html.DisplayFor(modelItem => item.Name)
                     </td>
                     <td>
-                        @{
-                            string path = "~/Images/" + item.Image;
-                        }
-                        <img src="@Url.Content(path)" width="100" alt="ảnh"/>
-                        @*@Html.DisplayFor(modelItem => item.Image)*@
+                        <img src="@item.Image" width="100" alt="ảnh"/>
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Price)
