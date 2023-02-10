@@ -112,7 +112,8 @@
         <b>@Html.DisplayNameFor(model => model.ProductDetail.Description):</b>
         @Html.DisplayFor(model => model.ProductDetail.Description)
     </div>
-
+    <br />
+    <hr />
     <form asp-action="Delete">
         <input type="hidden" asp-for="ProductDetail.Id" />
         <input type="submit" value="Xóa" class="btn btn-danger" onclick="confirmDelete()" /> |

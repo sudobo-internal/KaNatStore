@@ -292,8 +292,11 @@
             </div>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="/Admin/js/app.js"></script>
+    <script src="~/js/upload.js"></script>
     <!-- Bootstrap core JavaScript-->
-    <script src="/Admin/vendor/jquery/jquery.min.js"></script>
+    @*<script src="/Admin/vendor/jquery/jquery.min.js"></script>*@
     <script src="/Admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
@@ -308,7 +311,6 @@
     <!-- Page level custom scripts -->
     <script src="/Admin/js/demo/chart-area-demo.js"></script>
     <script src="/Admin/js/demo/chart-pie-demo.js"></script>
-    <script src="/js/upload.js"></script>
     @RenderSection("JS", required: false)
 </body>
 </html>
