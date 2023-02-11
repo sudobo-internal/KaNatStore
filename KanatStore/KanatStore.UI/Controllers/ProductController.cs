@@ -62,9 +62,10 @@ namespace KanatStore.UI.Controllers
                 {
                     _productRespository.Create(pro.ProductDetail);
                     _productRespository.Save();
+                    return RedirectToAction(nameof(Index));
                 }
                 ViewBag.CategoryId = new SelectList(_categoryRespository.GetAll(), "Id", "Name");
-                return RedirectToAction(nameof(Index));
+                return View();
             }
             catch (Exception ex)
             {
