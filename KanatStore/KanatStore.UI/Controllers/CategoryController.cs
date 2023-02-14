@@ -122,10 +122,13 @@ namespace KanatStore.UI.Controllers
                 {
                     ViewBag.mess = "Xóa thành công";
                     _categoryRespository.Save();
+                    return RedirectToAction(nameof(Index));
                 }
                 else
-                    ViewBag.mess = "Xóa thất bại";
-                return RedirectToAction(nameof(Index));
+                {
+                    ViewBag.mess = "Không tìm thấy danh mục hoặc danh mục chứa sản phẩm không thể xóa";
+                    return View("Delete",cate);
+                }
             }
             catch (Exception ex)
             {
