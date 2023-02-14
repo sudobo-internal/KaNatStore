@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace KanatStore.BLL.Categories.Services
 {
-    public interface ICategoryRespository
+    public interface ICategoryRespository:CommonRepository
     {
         public List<Category> GetAll();
+        public Category GetById(int id);
+        public void Create(Category category);
+        public bool Update(Category category);
+        public bool Delete(int id);
     }
 }

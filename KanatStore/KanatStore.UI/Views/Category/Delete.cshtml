@@ -1,0 +1,34 @@
+﻿@model KanatStore.UI.Models.CategoryDetailViewModel
+@{
+    ViewBag.Title = "Xóa danh mục";
+}
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h1>Bạn chắc chắn muốn xóa?</h1>
+    <hr />
+    <div class="row">
+        <div class="col-2">
+            @Html.DisplayNameFor(Model=>Model.CategoryDetail.Name)
+        </div>
+        <div class="col-10">
+            @Html.DisplayFor(Model=>Model.CategoryDetail.Name)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            @Html.DisplayNameFor(Model=>Model.CategoryDetail.Description)
+        </div>
+        <div class="col-10">
+            @Html.DisplayFor(Model=>Model.CategoryDetail.Description)
+        </div>
+    </div>
+    <hr />
+    <form asp-action="Delete">
+        <input type="submit" value="Xóa" class="btn-danger"/>
+        <a asp-action="Index">Quay lại</a>
+    </form>
+</body>
+</html>

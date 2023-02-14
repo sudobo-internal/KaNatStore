@@ -1,0 +1,43 @@
+﻿@model KanatStore.UI.Models.CategoryDetailViewModel
+@{
+    ViewBag.Title = "Tạo mới danh mục";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <h1>Tạo mới danh mục</h1>
+    <hr />
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row form-group">
+            <div class="col-2 ">
+                @Html.DisplayNameFor(Model=>Model.CategoryDetail.Name)
+            </div>
+            <div class="col-10">
+                <input asp-for="CategoryDetail.Name" class="form-control"/>
+                <span asp-validation-for="CategoryDetail.Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-2">
+                @Html.DisplayNameFor(Model=>Model.CategoryDetail.Description)
+            </div>
+            <div class="col-10">
+                <textarea asp-for=CategoryDetail.Description class="form-control"></textarea>
+                <span asp-validation-for="CategoryDetail.Description" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Thêm mới" class="btn btn-primary" />
+        </div>
+    </form>
+    <div>
+        <a asp-action="Index">Quay lại</a>
+    </div>
+</body>
+</html>
+
