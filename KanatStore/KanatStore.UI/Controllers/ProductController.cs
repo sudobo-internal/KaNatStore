@@ -45,7 +45,7 @@ namespace KanatStore.UI.Controllers
         {
             //khoi tao viewmodel truyen vao view
             ProductDetailViewModel product = new ProductDetailViewModel();
-            product.ProductDetail = new BLL.Dto.ProductDto();
+            //product.ProductDetail = new BLL.Dto.ProductDto();
             ViewBag.CategoryId = new SelectList(_categoryRespository.GetAll(), "Id", "Name");
             return View(product);
         }
@@ -65,12 +65,12 @@ namespace KanatStore.UI.Controllers
                     return RedirectToAction(nameof(Index));
                 }
                 ViewBag.CategoryId = new SelectList(_categoryRespository.GetAll(), "Id", "Name");
-                return View();
+                return View(pro);
             }
             catch (Exception ex)
             {
                 ViewBag.error = "Thêm mới không thành công" + ex.Message;
-                return View(pro.ProductDetail);
+                return View(pro);
             }
         }
         
