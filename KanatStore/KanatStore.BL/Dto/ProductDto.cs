@@ -5,6 +5,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace KanatStore.BLL.Dto
 {
+    /// <summary>
+    /// class ProductDto
+    /// </summary>
     public class ProductDto
     {
         public int Id { get; set; }
@@ -20,9 +23,9 @@ namespace KanatStore.BLL.Dto
         [DisplayName("Chiều dày")]
         public float? Thickness { get; set; }
         [DisplayName("Xuất xứ")]
-        public string? Origin { get; set; }
+        public string Origin { get; set; }
         [DisplayName("Hình ảnh")]
-        public string? Image { get; set; }
+        public string Image { get; set; }
         [DisplayName("Giá bán")]
         public double? Price { get; set; }
         [DisplayName("Giá nhập")]
@@ -38,6 +41,6 @@ namespace KanatStore.BLL.Dto
         public string Description { get; set; }
         public int CategoryId { get; set; }
         [DisplayName("Danh mục")]
-        public string? CategoryName { get; set; }
+        public string CategoryName { get; set; }
     }
 }
