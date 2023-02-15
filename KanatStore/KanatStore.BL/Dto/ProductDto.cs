@@ -7,6 +7,9 @@ namespace KanatStore.BLL.Dto
 {
     public class ProductDto
     {
+        public ProductDto() {
+            this.Origin = string.Empty;
+        }
         [Key]
         public int Id { get; set; }
         [Required(ErrorMessage ="Tên sản phẩm không được bỏ trống")]
@@ -21,9 +24,9 @@ namespace KanatStore.BLL.Dto
         [DisplayName("Chiều dày")]
         public float? Thickness { get; set; }
         [DisplayName("Xuất xứ")]
-        public string? Origin { get; set; }
+        public string Origin { get ; set; } = String.Empty;
         [DisplayName("Hình ảnh")]
-        public string? Image { get; set; }
+        public string Image { get; set; } = string.Empty;
         [DisplayName("Giá bán")]
         public double? Price { get; set; }
         [DisplayName("Giá nhập")]
@@ -31,14 +34,14 @@ namespace KanatStore.BLL.Dto
         [DisplayName("Số lượng có")]
         public int Quantity { get; set; }
         [DisplayName("Đơn vị")]
-        public string? Unit { get; set; }
+        public string Unit { get; set; } = string.Empty;
         [DisplayName("Trạng thái")]
         [Required(ErrorMessage ="Trạng thái không được bỏ trống")]
         public string Status { get; set; }
         [DisplayName("Mô tả")]
-        public string? Description { get; set; }
+        public string Description { get; set; } = string.Empty;
         public int CategoryId { get; set; }
         [DisplayName("Danh mục")]
-        public string? CategoryName { get; set; }
+        public string CategoryName { get; set; } = string.Empty;
     }
 }

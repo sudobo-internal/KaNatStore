@@ -2,7 +2,6 @@
 @{
     ViewBag.Title = "Thêm mới";
 }
-@*@using(Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "multipart/form-data" } ))*@
 
 <!DOCTYPE html>
 <html>
@@ -11,11 +10,15 @@
 </head>
 <body>
     <h1>Thêm mới</h1>
+    <div>
+        <a asp-action="Index">Quay lại</a>
+    </div>
     <hr />
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="container">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-5">
                 <div class="form-group">
                     <label asp-for="ProductDetail.Name" class="control-label"></label>
                     <input asp-for="ProductDetail.Name" class="form-control" />
@@ -42,9 +45,6 @@
                     <span asp-validation-for="ProductDetail.Origin" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    @*<label asp-for="ProductDetail.Image" class="control-label"></label>
-                        <input asp-for="ProductDetail.Image" class="form-control" type="file" onsubmit="AJAXSubmit(this);return false;" />
-                    <span asp-validation-for="ProductDetail.Image" class="text-danger"></span>*@
                     <label asp-for="ProductDetail.Image" class="control-lable">Hình ảnh</label>
                     <p>
                         <button type="button" onclick="$('#thumbnail_file').click()" class="btn btn-warning" style="margin-top: 10px;" id="btn_upload_file">Tải ảnh lên</button>
@@ -53,15 +53,10 @@
                     <input onchange="changeThumbnail()" asp-for="ProductDetail.Image" class="form-control" style="display: none;" />
                     <span asp-validation-for="ProductDetail.Image" class="text-danger"></span>
                     <img src="/Images/noimg.jpg" style="width:100%; display; max-height: 200px" id="thumbnail-img" alt="ảnh"/>
-                    @*@Html.LabelFor(model=>model.ProductDetail.Image, htmlAttributes: new{@class="control-label col-md-2"})
-                    <div class="col-md-10">
-                        <input type="file" name="Image" id="Image" style="width: 100%;"/>
-                    </div> *@      
-                        @*<img src="/Images/noimage.jpg" alt="anh" width="100"/>
-                        <br/>
-                        <label for="idfile">Chọn ảnh</label>
-                        <input name="ImgFile" type="file" class="img-rounded" id="idfile" onchange="changeFile(event)"/>*@
                 </div>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-5">
                 <div class="form-group">
                     <label asp-for="ProductDetail.Price" class="control-label"></label>
                     <input asp-for="ProductDetail.Price" class="form-control" />
@@ -89,9 +84,6 @@
                 </div>
                 @*Sử dụng textarea để nhập dữ liệu cho Description*@
                 <div class="form-group">
-                    @*<label asp-for="ProductDetail.Description" class="control-label"></label>
-                    <textarea asp-for="ProductDetail.Description" class="form-control"/>
-                    <span asp-validation-for="ProductDetail.Description" class="text-danger"></span>*@
                     <label asp-for="ProductDetail.Description" class="control-label"></label>
                     <textarea asp-for="ProductDetail.Description" class="form-control content-editor" id="contentMota"></textarea>
                     <span asp-validation-for="ProductDetail.Description" class="text-danger"></span>
@@ -103,12 +95,11 @@
                 <div class="form-group">
                     <input type="submit" value="Thêm mới" class="btn btn-primary" />
                 </div>
-            </form>
-        </div>
+            </div>
+            </div>
+        </form>
     </div>
-    <div>
-        <a asp-action="Index">Quay lại</a>
-    </div>
+
     @if (ViewBag.error != null)
     {
         <div class="text-danger">
@@ -148,7 +139,6 @@
         $('#thumbnail-img').attr('src', $('#ProductDetail_Image').val())
      });
 </script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -156,29 +146,16 @@
                 height: 300,
                 minHeight: null,
                 maxHeight: null,
-                codemirror: {
-                    theme: "monokai"
-                },
-                callbacks: {
-                    onImageUpload: function (files) {
-                        for (var i = 0; i < files.length; i++) {
-                           
-                            uploadImage(files[i]);
-                        }
-                    }
-                },
                 fontSizes: ['12', '14', '16', '18', '24', '36', '48'],
-                toolbar: [
-                      ['style', ['style']],
-                      ['font', ['bold', 'underline', 'clear']],
-                      ['fontname', ['fontname']],
-                      ['fontsize', ['fontsize']],
-                      ['color', ['color']],
-                      ['para', ['ul', 'ol', 'paragraph']],
-                      ['table', ['table']],
-                      ['insert', ['link', 'picture', 'video']],
-                      ['view', ['fullscreen', 'codeview', 'help']],
-                ],
+                    toolbar: [
+                        // [groupName, [list of button]]
+                        ['style', ['bold', 'italic', 'underline', 'clear']],
+                        ['font', ['strikethrough', 'superscript', 'subscript']],
+                        ['fontsize', ['fontsize']],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['height', ['height']]
+                    ]
             });
         });
         </script>
