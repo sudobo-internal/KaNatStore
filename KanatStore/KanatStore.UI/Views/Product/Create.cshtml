@@ -2,17 +2,18 @@
 @{
     ViewBag.Title = "Thêm mới";
 }
+
 <!DOCTYPE html>
 <html>
 <head>
-
+   
 </head>
 <body>
     <h1>Thêm mới</h1>
     <hr />
     <div class="row">
         <div class="col-md-4">
-            <form asp-action="Create" method="post">
+            <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
                     <label asp-for="ProductDetail.Name" class="control-label"></label>
@@ -40,17 +41,14 @@
                     <span asp-validation-for="ProductDetail.Origin" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="ProductDetail.Image" class="control-label"></label>
-                    <input asp-for="ProductDetail.Image" class="form-control" />
-                    <span asp-validation-for="ProductDetail.Image" class="text-danger"></span>
-                    @*<label asp-for="ProductDetail.Image" class="control-lable">Hình ảnh</label>
+                    <label asp-for="ProductDetail.Image" class="control-lable">Hình ảnh</label>
                     <p>
-                        <button type="button" onclick="$('#image_file').click()" class="btn btn-warning" style="margin-top: 10px;" id="btn_upload_file">Tải ảnh lên</button>
+                        <button type="button" onclick="$('#thumbnail_file').click()" class="btn btn-warning" style="margin-top: 10px;" id="btn_upload_file">Tải ảnh lên</button>
                     </p>
-                    <input style="display:none;" class="form-control upload-thumbnail margin-bottom-15" type="file" id="image_file"/>
-                    <input onchange="changeThumbnail()" asp-for="ProductDetail.Image" class="form-control" style="display: none"/>
+                    <input style="display: none;" class="form-control upload-thumbnail margin-bottom-15" type="file" id="thumbnail_file"/>
+                    <input onchange="changeThumbnail()" asp-for="ProductDetail.Image" class="form-control" style="display: none;" />
                     <span asp-validation-for="ProductDetail.Image" class="text-danger"></span>
-                    <img src="" style="width:100%; display: none; max-height: 200px" id="thumbnail-img" />*@
+                    <img src="" style="width:100%; display; max-height: 200px" id="thumbnail-img" alt="ảnh"/>
                 </div>
                 <div class="form-group">
                     <label asp-for="ProductDetail.Price" class="control-label"></label>
@@ -77,17 +75,18 @@
                     <input asp-for="ProductDetail.Status" class="form-control" />
                     <span asp-validation-for="ProductDetail.Status" class="text-danger"></span>
                 </div>
+                @*Sử dụng textarea để nhập dữ liệu cho Description*@
                 <div class="form-group">
                     <label asp-for="ProductDetail.Description" class="control-label"></label>
-                    <input asp-for="ProductDetail.Description" class="form-control" />
+                    <textarea asp-for="ProductDetail.Description" class="form-control summernote" id="content"></textarea>
                     <span asp-validation-for="ProductDetail.Description" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="ProductDetail.CategoryId" class="control-label"></label>
+                    <label class="control-label">Danh mục</label>
                     <select asp-for="ProductDetail.CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Thêm mới" class="btn btn-primary"/>
+                    <input type="submit" value="Thêm mới" class="btn btn-primary" />
                 </div>
             </form>
         </div>
@@ -101,39 +100,44 @@
             @ViewBag.error
         </div>
     }
+@section JS {
+<script type="text/javascript">
+    $(function() {
+            changeThumbnail()
+    })
+    
+    function changeThumbnail() {
+        if ($('#ProductDetail_Image').val() != '') {
+            $('#thumbnail-img').attr('src', $('#ProductDetail_Image').val())
+            $('#thumbnail-img').show()
+        } else {
+             $('#thumbnail-img').hide()
+                }
+        }
+    $("#thumbnail_file").change(function (e) {
+        if ($(this).val() != "") {
+            console.log($('#ProductDetail_Image').val());
+            $('#btn_upload_file').html('Đang tải ảnh...')
+            uploadFile(e,'ProductDetail_Image')
+        }
+    });
+
+        $('#ProductDetail_Image').change(function() {
+        console.log('haha' + $('#ProductDetail_Image').val())
+        $('#btn_upload_file').html('Tải ảnh lên')
+        if ($('#ProductDetail_Image').val() == "") {
+            $('#thumbnail-img').hide()
+        } else {
+            $('#thumbnail-img').show()
+        }
+        $('#thumbnail-img').attr('src', $('#ProductDetail_Image').val())
+     });
+</script>
+}
 </body>
 </html>
 
-@section JS{
-    <script type="text/javascript">
-        $(function(){
-            changeThumbnail()
-        })
-        function changeThumbnail(){
-            if ($('#ProductDetail.Image').val()!=''){
-                $('#thumbnail-img').attr('src', $('#ProductDetail.Image').val())
-                $('#thumbnail-img').show()
-            } else {
-                $('#thumbnail-img').hide()
-            }
-        }
-         $("#image_file").change(function (e) {
-            if ($(this).val() != "") {
-                $('#btn_upload_file').html('Đang tải ảnh...')
-                uploadFile(e, 'ProductDetail.Image')
-            }
-        });
 
-        $('#ProductDetail.Image').change(function() {
-            console.log($('#ProductDetail.Image').val())
-            $('#btn_upload_file').html('Tải ảnh lên')
-            if ($('#ProductDetail.Image').val() == "") {
-                $('#thumbnail-img').hide()
-            } else {
-                $('#thumbnail-img').show()
-            }
 
-            $('#thumbnail-img').attr('src', $('#ProductDetail.Image').val())
-        })
-    </script>
-}
+
+

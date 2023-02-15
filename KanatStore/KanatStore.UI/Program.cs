@@ -25,8 +25,8 @@
 //    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 //app.Run();
-
-
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Hosting;
 
 namespace KanatStore.UI
 {

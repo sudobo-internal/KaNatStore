@@ -6,6 +6,7 @@ using System;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace KanatStore.BLL.Product.Services
 {
@@ -31,11 +32,11 @@ namespace KanatStore.BLL.Product.Services
             product.Name = pro.Name;
             product.Length = pro.Length;
             product.Width= pro.Width;
-            product.Thickness= pro.Thickness;
+            product.Thickness= (float)pro.Thickness;
             product.Origin = pro.Origin;
             product.Image = pro.Image;
-            product.Price= pro.Price;
-            product.ImportPrice= pro.ImportPrice;
+            product.Price= (double)pro.Price;
+            product.ImportPrice= (double)pro.ImportPrice;
             product.Quantity= pro.Quantity;
             product.Unit = pro.Unit;
             product.Status= pro.Status;
@@ -80,7 +81,7 @@ namespace KanatStore.BLL.Product.Services
         public ProductDto GetById(int id)
         {
             //return _dbContext.Products.Where(x => x.Id == id).Include(x => x.Category).FirstOrDefault();
-            return (from p in _dbContext.Products
+            return  (from p in _dbContext.Products
                     join c in _dbContext.Categories
                     on p.CategoryId equals c.Id
                     where p.Id == id
@@ -104,10 +105,6 @@ namespace KanatStore.BLL.Product.Services
                     }).FirstOrDefault();
         }
 
-        //public void Update(ProductDto pro)
-        //{
-        //    _dbContext.Products.Update(pro);
-        //}
 
         private bool _disposed = false;
         protected virtual void Dispose(bool disposed)
@@ -133,6 +130,71 @@ namespace KanatStore.BLL.Product.Services
         public void Save()
         {
             _dbContext.SaveChanges();
+        }
+
+        /// <summary>
+        /// Update a product
+        /// </summary>
+        /// <param name="pro"></param>
+        /// <returns>bool</returns>
+        public bool Update(ProductDto pro)
+        {
+            var idfind = _dbContext.Products.Where(x => x.Id == pro.Id).FirstOrDefault();
+            if (idfind == null)
+                return false;
+            else
+            {
+                var proFind = (from p in _dbContext.Products
+                                     join c in _dbContext.Categories
+                                     on p.CategoryId equals c.Id
+                                     where p.Id == pro.Id
+                                     select p).FirstOrDefault();
+                if (proFind == null) return false;
+                else
+                {
+                    proFind.Name = pro.Name;
+                    proFind.Length = pro.Length;
+                    proFind.Width = pro.Width;
+                    proFind.Thickness = (float)pro.Thickness;
+                    proFind.Origin = pro.Origin;
+                    proFind.Image = pro.Image;
+                    proFind.Price = (double)pro.Price;
+                    proFind.ImportPrice = (double)pro.ImportPrice;
+                    proFind.Quantity = pro.Quantity;
+                    proFind.Unit = pro.Unit;
+                    proFind.Status = pro.Status;
+                    proFind.Description = pro.Description;
+                    proFind.CategoryId = pro.CategoryId;
+                    return true;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public bool Delete(int id)
+        {
+            var idfind = _dbContext.Products.Where(x => x.Id == id).FirstOrDefault();
+            if (idfind == null)
+                return false;
+            else
+            {
+                var proFind = (from p in _dbContext.Products
+                               join c in _dbContext.Categories
+                               on p.CategoryId equals c.Id
+                               where p.Id == id
+                               select p).FirstOrDefault();
+                if (proFind == null) return false;
+                else
+                {
+                    _dbContext.Products.Remove(proFind);
+                    return true;
+                }
+            }
         }
     }
 }
