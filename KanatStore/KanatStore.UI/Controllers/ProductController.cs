@@ -12,7 +12,7 @@ namespace KanatStore.UI.Controllers
         private readonly IProductRespository _productRespository;
         private readonly ICategoryRespository _categoryRespository;
         /// <summary>
-        /// Contructor
+        /// Tạo mới ProductController
         /// </summary>
         /// <param name="productResporitory"></param>
         /// <param name="categoryRespository"></param>
@@ -29,6 +29,7 @@ namespace KanatStore.UI.Controllers
             prod.Products = _productRespository.GetAll();
             return View(prod);
         }
+
         //GET: Product/Details/1
         public IActionResult Details(int id)
         {
@@ -45,7 +46,6 @@ namespace KanatStore.UI.Controllers
         {
             //khoi tao viewmodel truyen vao view
             ProductDetailViewModel product = new ProductDetailViewModel();
-            //product.ProductDetail = new BLL.Dto.ProductDto();
             ViewBag.CategoryId = new SelectList(_categoryRespository.GetAll(), "Id", "Name");
             return View(product);
         }

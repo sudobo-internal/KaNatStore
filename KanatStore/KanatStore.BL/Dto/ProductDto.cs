@@ -7,7 +7,6 @@ namespace KanatStore.BLL.Dto
 {
     public class ProductDto
     {
-        [Key]
         public int Id { get; set; }
         [Required(ErrorMessage ="Tên sản phẩm không được bỏ trống")]
         [DisplayName("Tên sản phẩm")]
@@ -31,12 +30,12 @@ namespace KanatStore.BLL.Dto
         [DisplayName("Số lượng có")]
         public int Quantity { get; set; }
         [DisplayName("Đơn vị")]
-        public string? Unit { get; set; }
+        public string Unit { get; set; }
         [DisplayName("Trạng thái")]
         [Required(ErrorMessage ="Trạng thái không được bỏ trống")]
         public string Status { get; set; }
         [DisplayName("Mô tả")]
-        public string? Description { get; set; }
+        public string Description { get; set; }
         public int CategoryId { get; set; }
         [DisplayName("Danh mục")]
         public string? CategoryName { get; set; }
