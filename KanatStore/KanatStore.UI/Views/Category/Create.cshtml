@@ -6,7 +6,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
+    @*<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">*@
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
 </head>
 <body>
     <h1>Tạo mới danh mục</h1>
@@ -28,7 +29,7 @@
                 @Html.DisplayNameFor(Model=>Model.CategoryDetail.Description)
             </div>
             <div class="col-10">
-                <textarea asp-for=CategoryDetail.Description class="form-control" id=""></textarea>
+                <textarea asp-for=CategoryDetail.Description class="form-control" id="mota"></textarea>
                 <span asp-validation-for="CategoryDetail.Description" class="text-danger"></span>
             </div>
         </div>
@@ -45,7 +46,8 @@
     </div>
 
 @section JS{
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
+    @*<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $("#mota").summernote({

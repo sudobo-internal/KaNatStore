@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
 </head>
 <body>
     <h1>Sửa danh mục</h1>
@@ -43,26 +43,26 @@
             alert(@ViewBag.mess);
     }
     </script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $("#mota").summernote({
-            height: 250,
-            minHeight: null,
-            maxHeight: null,
-            fontSizes: ['12', '14', '16', '18', '24', '36', '48'],
-            toolbar: [
-                // [groupName, [list of button]]
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['height', ['height']]
-            ]
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#mota").summernote({
+                height: 250,
+                minHeight: null,
+                maxHeight: null,
+                fontSizes: ['12', '14', '16', '18', '24', '36', '48'],
+                toolbar: [
+                    // [groupName, [list of button]]
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['strikethrough', 'superscript', 'subscript']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['height', ['height']]
+                ]
+            });
         });
-    });
-</script>
+    </script>
 }
 </body>
 </html>

@@ -60,7 +60,7 @@
                 @Html.DisplayFor(ModelItem=>item.Name)
             </div>
             <div class="col-7">
-                @Html.DisplayFor(ModelItem=>item.Description)
+                @Html.Raw(item.Description)
             </div>
             <div class="col-1">
                 <a class="fas fa-fw fa-adjust" asp-action="Edit" asp-route-id="@item.Id"></a>|

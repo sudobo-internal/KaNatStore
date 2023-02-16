@@ -35,6 +35,8 @@ namespace KanatStore.UI
                 option.IdleTimeout = TimeSpan.FromMinutes(10);
             });
             services.AddControllersWithViews();
+
+            //Removes the required attribute for non-nullable reference types.
             services.AddControllers(
             options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
 

@@ -6,6 +6,11 @@
 <html>
 <head>
     <link href="~/css/product.css" rel="stylesheet" />
+    <style>
+        th{
+            padding-right: 50px;
+        }
+    </style>
 </head>
 <body>
     <h1>Chi tiết sản phẩm</h1>
@@ -109,9 +114,9 @@
         </div>
     </div>
     <hr />
-    <div class="row">
+    <div class="row" style="display: block">
         <b>@Html.DisplayNameFor(model => model.ProductDetail.Description):</b>
-        @Html.DisplayFor(model => model.ProductDetail.Description)
+        <p>@Html.Raw(Model.ProductDetail.Description)</p>
     </div>
 </body>
 </html>
