@@ -12,6 +12,7 @@ using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using KanatStore.BLL.Store.Service;
 
 namespace KanatStore.UI
 {
@@ -44,6 +45,7 @@ namespace KanatStore.UI
             services.AddDbContext<KanatStoreDBContext>(options => options.UseSqlServer(connectionString));
             services.AddScoped<IProductRespository, ProductRepository>();
             services.AddScoped<ICategoryRespository, CategoryRespository>();
+            services.AddScoped<IStoreRepository, StoreRepository>();
 
         }
 
