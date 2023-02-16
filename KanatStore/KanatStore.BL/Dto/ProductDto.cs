@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace KanatStore.BLL.Dto
 {
@@ -38,9 +39,10 @@ namespace KanatStore.BLL.Dto
         [Required(ErrorMessage ="Trạng thái không được bỏ trống")]
         public string Status { get; set; }
         [DisplayName("Mô tả")]
-        public string Description { get; set; }
+        [StringLength(500, ErrorMessage =("Mô tả không được vượt quá 500 kí tự"))]
+        public string Description { get; set; } = string.Empty;
         public int CategoryId { get; set; }
         [DisplayName("Danh mục")]
-        public string CategoryName { get; set; }
+        public string CategoryName { get; set; } = string.Empty;
     }
 }

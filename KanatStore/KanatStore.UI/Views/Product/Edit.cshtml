@@ -5,97 +5,103 @@
 <! DOCTYPE html>
 <html>
     <head>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
     </head>
     <body>
     <h1>Sửa sản phẩm</h1>
-    <hr />
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-action="Edit">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="ProductDetail.Id" />
-                <div class="form-group">
-                    <label asp-for="ProductDetail.Name" class="control-label"></label>
-                    <input asp-for="ProductDetail.Name" class="form-control" />
-                    <span asp-validation-for="ProductDetail.Name" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ProductDetail.Length" class="control-label"></label>
-                    <input asp-for="ProductDetail.Length" class="form-control" />
-                    <span asp-validation-for="ProductDetail.Length" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ProductDetail.Width" class="control-label"></label>
-                    <input asp-for="ProductDetail.Width" class="form-control" />
-                    <span asp-validation-for="ProductDetail.Width" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ProductDetail.Thickness" class="control-label"></label>
-                    <input asp-for="ProductDetail.Thickness" class="form-control" />
-                    <span asp-validation-for="ProductDetail.Thickness" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ProductDetail.Origin" class="control-label"></label>
-                    <input asp-for="ProductDetail.Origin" class="form-control" />
-                    <span asp-validation-for="ProductDetail.Origin" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ProductDetail.Image" class="control-lable">Hình ảnh</label>
-                    <p>
-                        <button type="button" onclick="$('#thumbnail_file').click()" class="btn btn-warning" style="margin-top: 10px;" id="btn_upload_file">Tải ảnh lên</button>
-                    </p>
-                    <input style="display: none;" class="form-control upload-thumbnail margin-bottom-15" type="file" id="thumbnail_file" />
-                    <input onchange="changeThumbnail()" asp-for="ProductDetail.Image" class="form-control" style="display: none;" />
-                    <span asp-validation-for="ProductDetail.Image" class="text-danger"></span>
-                    <img src="@Model.ProductDetail.Image" style="width:100%; display; max-height: 200px" id="thumbnail-img" alt="ảnh" />
-                </div>
-                <div class="form-group">
-                    <label asp-for="ProductDetail.Price" class="control-label"></label>
-                    <input asp-for="ProductDetail.Price" class="form-control" />
-                    <span asp-validation-for="ProductDetail.Price" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ProductDetail.ImportPrice" class="control-label"></label>
-                    <input asp-for="ProductDetail.ImportPrice" class="form-control" />
-                    <span asp-validation-for="ProductDetail.ImportPrice" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ProductDetail.Quantity" class="control-label"></label>
-                    <input asp-for="ProductDetail.Quantity" class="form-control" />
-                    <span asp-validation-for="ProductDetail.Quantity" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ProductDetail.Unit" class="control-label"></label>
-                    <input asp-for="ProductDetail.Unit" class="form-control" />
-                    <span asp-validation-for="ProductDetail.Unit" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ProductDetail.Status" class="control-label"></label>
-                    <input asp-for="ProductDetail.Status" class="form-control" />
-                    <span asp-validation-for="ProductDetail.Status" class="text-danger"></span>
-                </div>
-                @*Sử dụng textarea để nhập dữ liệu cho Description*@
-                <div class="form-group">
-                    @*<label asp-for="ProductDetail.Description" class="control-label"></label>
-                    <textarea asp-for="ProductDetail.Description" class="form-control"/>
-                    <span asp-validation-for="ProductDetail.Description" class="text-danger"></span>*@
-                    <label asp-for="ProductDetail.Description" class="control-label"></label>
-                    <textarea asp-for="ProductDetail.Description" class="form-control summernote" id="content"></textarea>
-                    <span asp-validation-for="ProductDetail.Description" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ProductDetail.CategoryId" class="control-label"></label>
-                    <select asp-for="ProductDetail.CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Lưu thay đổi" class="btn btn-primary" />
-                </div>
-            </form>
-        </div>
-    </div>
     <div>
         <a asp-action="Index">Quay lại</a>
     </div>
+    <hr />
+    <div class="container">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProductDetail.Id" />
+            <div class="row">
+                <div class="col-5">
+                    <div class="form-group">
+                        <label asp-for="ProductDetail.Name" class="control-label"></label>
+                        <input asp-for="ProductDetail.Name" class="form-control" />
+                        <span asp-validation-for="ProductDetail.Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductDetail.Length" class="control-label"></label>
+                        <input asp-for="ProductDetail.Length" class="form-control" />
+                        <span asp-validation-for="ProductDetail.Length" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductDetail.Width" class="control-label"></label>
+                        <input asp-for="ProductDetail.Width" class="form-control" />
+                        <span asp-validation-for="ProductDetail.Width" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductDetail.Thickness" class="control-label"></label>
+                        <input asp-for="ProductDetail.Thickness" class="form-control" />
+                        <span asp-validation-for="ProductDetail.Thickness" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductDetail.Origin" class="control-label"></label>
+                        <input asp-for="ProductDetail.Origin" class="form-control" />
+                        <span asp-validation-for="ProductDetail.Origin" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductDetail.Image" class="control-lable">Hình ảnh</label>
+                        <p>
+                            <button type="button" onclick="$('#thumbnail_file').click()" class="btn btn-warning" style="margin-top: 10px;" id="btn_upload_file">Tải ảnh lên</button>
+                        </p>
+                        <input style="display: none;" class="form-control upload-thumbnail margin-bottom-15" type="file" id="thumbnail_file" />
+                        <input onchange="changeThumbnail()" asp-for="ProductDetail.Image" class="form-control" style="display: none;" />
+                        <span asp-validation-for="ProductDetail.Image" class="text-danger"></span>
+                        <img src="@Model.ProductDetail.Image" style="width:100%; max-height: 200px" id="thumbnail-img" alt="ảnh" />
+                    </div>
+                </div>
+                <div class="col-2">
+
+                </div>
+                <div class="col-5">
+                    <div class="form-group">
+                        <label asp-for="ProductDetail.Price" class="control-label"></label>
+                        <input asp-for="ProductDetail.Price" class="form-control" />
+                        <span asp-validation-for="ProductDetail.Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductDetail.ImportPrice" class="control-label"></label>
+                        <input asp-for="ProductDetail.ImportPrice" class="form-control" />
+                        <span asp-validation-for="ProductDetail.ImportPrice" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductDetail.Quantity" class="control-label"></label>
+                        <input asp-for="ProductDetail.Quantity" class="form-control" />
+                        <span asp-validation-for="ProductDetail.Quantity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductDetail.Unit" class="control-label"></label>
+                        <input asp-for="ProductDetail.Unit" class="form-control" />
+                        <span asp-validation-for="ProductDetail.Unit" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductDetail.Status" class="control-label"></label>
+                        <input asp-for="ProductDetail.Status" class="form-control" />
+                        <span asp-validation-for="ProductDetail.Status" class="text-danger"></span>
+                    </div>
+                    @*Sử dụng textarea để nhập dữ liệu cho Description*@
+                    <div class="form-group">
+                        <label asp-for="ProductDetail.Description" class="control-label"></label>
+                        <textarea asp-for="ProductDetail.Description" class="form-control" id="mota" ></textarea>
+                        <span asp-validation-for="ProductDetail.Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ProductDetail.CategoryId" class="control-label"></label>
+                        <select asp-for="ProductDetail.CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Lưu thay đổi" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        </form>
+        </div>
+   
     @if (ViewBag.error != null)
     {
         <div class="text-danger">
@@ -135,6 +141,26 @@
         $('#thumbnail-img').attr('src', $('#ProductDetail_Image').val())
      });
 </script>
-}
-    </body>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#mota").summernote({
+                height: 250,
+                minHeight: null,
+                maxHeight: null,
+                fontSizes: ['12', '14', '16', '18', '24', '36', '48'],
+                toolbar: [
+                    // [groupName, [list of button]]
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['strikethrough', 'superscript', 'subscript']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['height', ['height']]
+                ]
+            });
+        });
+    </script>
+    }
+</body>
 </html>

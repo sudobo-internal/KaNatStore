@@ -1,0 +1,73 @@
+﻿@model KanatStore.UI.Models.CategoryDetailViewModel
+@{
+    ViewBag.Title = "Tạo mới danh mục";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    @*<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">*@
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Tạo mới danh mục</h1>
+    <hr />
+    <div class="container">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row form-group">
+            <div class="col-2 ">
+                @Html.DisplayNameFor(Model=>Model.CategoryDetail.Name)
+            </div>
+            <div class="col-10">
+                <input asp-for="CategoryDetail.Name" class="form-control"/>
+                <span asp-validation-for="CategoryDetail.Name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-2">
+                @Html.DisplayNameFor(Model=>Model.CategoryDetail.Description)
+            </div>
+            <div class="col-10">
+                <textarea asp-for=CategoryDetail.Description class="form-control" id="mota"></textarea>
+                <span asp-validation-for="CategoryDetail.Description" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Thêm mới" class="btn btn-primary" />
+        </div>
+    </form>
+    <div>
+        <a asp-action="Index">Quay lại</a>
+        </div>
+    </div>
+    <div style="color: red">
+        @ViewBag.error
+    </div>
+
+@section JS{
+    @*<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#mota").summernote({
+                height: 250,
+                minHeight: null,
+                maxHeight: null,
+                fontSizes: ['12', '14', '16', '18', '24', '36', '48'],
+                toolbar: [
+                    // [groupName, [list of button]]
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['strikethrough', 'superscript', 'subscript']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['height', ['height']]
+                ]
+            });
+        });
+    </script>
+}
+</body>
+</html>
+

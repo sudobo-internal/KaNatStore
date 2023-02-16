@@ -36,6 +36,10 @@ namespace KanatStore.UI
             });
             services.AddControllersWithViews();
 
+            //Removes the required attribute for non-nullable reference types.
+            services.AddControllers(
+            options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
+
             var connectionString = Configuraion.GetConnectionString("DatabaseInfor");
             services.AddDbContext<KanatStoreDBContext>(options => options.UseSqlServer(connectionString));
             services.AddScoped<IProductRespository, ProductRepository>();

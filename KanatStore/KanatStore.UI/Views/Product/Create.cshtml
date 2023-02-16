@@ -6,15 +6,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-   
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
 </head>
 <body>
     <h1>Thêm mới</h1>
+    <div>
+        <a asp-action="Index">Quay lại</a>
+    </div>
     <hr />
-    <div class="row">
-        <div class="col-md-4">
-            <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="container">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-5">
                 <div class="form-group">
                     <label asp-for="ProductDetail.Name" class="control-label"></label>
                     <input asp-for="ProductDetail.Name" class="form-control" />
@@ -50,6 +54,9 @@
                     <span asp-validation-for="ProductDetail.Image" class="text-danger"></span>
                     <img src="" style="width:100%; display; max-height: 200px" id="thumbnail-img" alt="ảnh"/>
                 </div>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-5">
                 <div class="form-group">
                     <label asp-for="ProductDetail.Price" class="control-label"></label>
                     <input asp-for="ProductDetail.Price" class="form-control" />
@@ -78,7 +85,7 @@
                 @*Sử dụng textarea để nhập dữ liệu cho Description*@
                 <div class="form-group">
                     <label asp-for="ProductDetail.Description" class="control-label"></label>
-                    <textarea asp-for="ProductDetail.Description" class="form-control summernote" id="content"></textarea>
+                    <textarea asp-for="ProductDetail.Description" class="form-control content-editor" id="contentMota"></textarea>
                     <span asp-validation-for="ProductDetail.Description" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -88,12 +95,11 @@
                 <div class="form-group">
                     <input type="submit" value="Thêm mới" class="btn btn-primary" />
                 </div>
-            </form>
-        </div>
+            </div>
+            </div>
+        </form>
     </div>
-    <div>
-        <a asp-action="Index">Quay lại</a>
-    </div>
+
     @if (ViewBag.error != null)
     {
         <div class="text-danger">
@@ -133,6 +139,26 @@
         $('#thumbnail-img').attr('src', $('#ProductDetail_Image').val())
      });
 </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+                $("#contentMota").summernote({
+                height: 300,
+                minHeight: null,
+                maxHeight: null,
+                fontSizes: ['12', '14', '16', '18', '24', '36', '48'],
+                    toolbar: [
+                        // [groupName, [list of button]]
+                        ['style', ['bold', 'italic', 'underline', 'clear']],
+                        ['font', ['strikethrough', 'superscript', 'subscript']],
+                        ['fontsize', ['fontsize']],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['height', ['height']]
+                    ]
+            });
+        });
+        </script>
 }
 </body>
 </html>

@@ -105,9 +105,9 @@
         </div>
     </div>
     <hr />
-    <div class="row">
+    <div class="row" style="display: block">
         <b>@Html.DisplayNameFor(model => model.ProductDetail.Description):</b>
-        @Html.DisplayFor(model => model.ProductDetail.Description)
+        <p>@Html.Raw(Model.ProductDetail.Description)</p>
     </div>
     <br />
     <hr />

@@ -101,17 +101,21 @@ namespace KanatStore.UI.Controllers
                     {
                         ViewBag.mess = "Sửa thành công";
                         _productRespository.Save();
+                        return RedirectToAction(nameof(Index));
                     }
                     else
+                    {
                         ViewBag.mess = "Sửa thất bại";
+                        return View(pro);
+                    }
                 }
                 ViewBag.CategoryId = new SelectList(_categoryRespository.GetAll(), "Id", "Name");
-                return RedirectToAction(nameof(Index));
+                return View(pro);
             }
             catch (Exception ex)
             {
                 ViewBag.error = "Thay đổi không thành công" + ex.Message;
-                return View(pro.ProductDetail);
+                return View(pro);
             }
         }
         //GET: Product/Edit/1

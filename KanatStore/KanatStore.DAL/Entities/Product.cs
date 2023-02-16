@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace KanatStore.DAL.Entities
 {
@@ -10,8 +11,7 @@ namespace KanatStore.DAL.Entities
         [Key]
         [Column("Id")]
         public int Id { get; set; }
-        [StringLength(50)]
-        [Column("Name", TypeName = "nvarchar(100)")]
+        [Column("Name", TypeName = "nvarchar(50)")]
         public string Name { get; set; }
         [Column("Length", TypeName = "real")]
         public float Length { get; set; }
@@ -22,7 +22,7 @@ namespace KanatStore.DAL.Entities
         [Column("Origin", TypeName = "nvarchar(50)")]
         public string Origin { get; set; }
         [Column("Image", TypeName = "nvarchar(100)")]
-        public string? Image { get; set; }
+        public string Image { get; set; }
         [Column("Price", TypeName = "float")]
         public double Price { get; set; }
         [Column("ImportPrice", TypeName = "float")]
@@ -30,11 +30,11 @@ namespace KanatStore.DAL.Entities
         [Column("Quantity", TypeName = "int")]
         public int Quantity { get; set; }
         [Column("Unit", TypeName = "nvarchar(50)")]
-        public string? Unit { get; set; }
+        public string Unit { get; set; }
         [Column("Status", TypeName = "nvarchar(50)")]
         public string Status { get; set; }
         [Column("Description", TypeName = "nvarchar(200)")]
-        public string? Description { get; set; }
+        public string Description { get; set; }
         [Column("CategoryId", TypeName = "int")]
         public int CategoryId { get; set; }
     }
