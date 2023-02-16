@@ -35,6 +35,8 @@ namespace KanatStore.UI
                 option.IdleTimeout = TimeSpan.FromMinutes(10);
             });
             services.AddControllersWithViews();
+            services.AddControllers(
+            options => options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true);
 
             var connectionString = Configuraion.GetConnectionString("DatabaseInfor");
             services.AddDbContext<KanatStoreDBContext>(options => options.UseSqlServer(connectionString));

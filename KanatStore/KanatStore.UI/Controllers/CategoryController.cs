@@ -50,12 +50,12 @@ namespace KanatStore.UI.Controllers
                     _categoryRespository.Save();
                     return RedirectToAction(nameof(Index));
                 }
-                return View();
+                return View(category);
             }
             catch (Exception ex)
             {
-                ViewBag.error = "Thêm mới không thành công" + ex.Message;
-                return View(category.CategoryDetail);
+                ViewBag.error = "Thêm mới không thành công " + ex.Message;
+                return View(category);
             }
         }
 

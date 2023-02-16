@@ -28,7 +28,7 @@
                 @Html.DisplayNameFor(Model=>Model.CategoryDetail.Description)
             </div>
             <div class="col-10">
-                <textarea data-val-required="Không được để trống" asp-for=CategoryDetail.Description class="form-control content-editor" id="mota"></textarea>
+                <textarea asp-for=CategoryDetail.Description class="form-control" id=""></textarea>
                 <span asp-validation-for="CategoryDetail.Description" class="text-danger"></span>
             </div>
         </div>
@@ -39,6 +39,9 @@
     <div>
         <a asp-action="Index">Quay lại</a>
         </div>
+    </div>
+    <div style="color: red">
+        @ViewBag.error
     </div>
 
 @section JS{

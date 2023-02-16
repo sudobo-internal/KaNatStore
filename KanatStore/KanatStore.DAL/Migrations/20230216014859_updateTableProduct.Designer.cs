@@ -3,6 +3,7 @@ using KanatStore.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KanatStore.DAL.Migrations
 {
     [DbContext(typeof(KanatStoreDBContext))]
-    partial class KanatStoreDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230216014859_updateTableProduct")]
+    partial class updateTableProduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,7 +35,6 @@ namespace KanatStore.DAL.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)")
                         .HasColumnName("Description");
 
@@ -79,7 +81,8 @@ namespace KanatStore.DAL.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(100)")
                         .HasColumnName("Name");
 
                     b.Property<string>("Origin")

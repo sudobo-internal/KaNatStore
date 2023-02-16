@@ -2,13 +2,13 @@
 using System.ComponentModel;
 using Microsoft.AspNetCore.Http;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace KanatStore.BLL.Dto
 {
     public class ProductDto
     {
         public ProductDto() {
-            this.Origin = string.Empty;
         }
         [Key]
         public int Id { get; set; }
@@ -39,6 +39,7 @@ namespace KanatStore.BLL.Dto
         [Required(ErrorMessage ="Trạng thái không được bỏ trống")]
         public string Status { get; set; }
         [DisplayName("Mô tả")]
+        [StringLength(200, ErrorMessage =("Mô tả không được vượt quá 200 kí tự"))]
         public string Description { get; set; } = string.Empty;
         public int CategoryId { get; set; }
         [DisplayName("Danh mục")]

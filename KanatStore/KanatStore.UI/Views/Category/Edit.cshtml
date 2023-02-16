@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
 </head>
 <body>
     <h1>Sửa danh mục</h1>
@@ -27,7 +27,7 @@
                     @Html.DisplayNameFor(Model=>Model.CategoryDetail.Description)
                 </div>
                 <div class="col-10">
-                    <textarea asp-for=CategoryDetail.Description class="form-control"></textarea>
+                    <textarea asp-for=CategoryDetail.Description class="form-control" id="mota"></textarea>
                     <span asp-validation-for="CategoryDetail.Description" class="text-danger"></span>
                 </div>
             </div>
@@ -37,12 +37,32 @@
         </form>
     </div>
     
-    @section JS{
-        <script type="text/javascript">
-            function message(@ViewBag.mess) {
-                alert(@ViewBag.mess);
-        }
-        </script>
+@section JS{
+    <script type="text/javascript">
+        function message(@ViewBag.mess) {
+            alert(@ViewBag.mess);
     }
+    </script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#mota").summernote({
+            height: 250,
+            minHeight: null,
+            maxHeight: null,
+            fontSizes: ['12', '14', '16', '18', '24', '36', '48'],
+            toolbar: [
+                // [groupName, [list of button]]
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough', 'superscript', 'subscript']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['height', ['height']]
+            ]
+        });
+    });
+</script>
+}
 </body>
 </html>
