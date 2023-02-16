@@ -6,11 +6,11 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace KanatStore.BLL.Dto
 {
+    /// <summary>
+    /// class ProductDto
+    /// </summary>
     public class ProductDto
     {
-        public ProductDto() {
-        }
-        [Key]
         public int Id { get; set; }
         [Required(ErrorMessage ="Tên sản phẩm không được bỏ trống")]
         [DisplayName("Tên sản phẩm")]
@@ -24,9 +24,9 @@ namespace KanatStore.BLL.Dto
         [DisplayName("Chiều dày")]
         public float? Thickness { get; set; }
         [DisplayName("Xuất xứ")]
-        public string Origin { get ; set; } = String.Empty;
+        public string Origin { get; set; }
         [DisplayName("Hình ảnh")]
-        public string Image { get; set; } = string.Empty;
+        public string Image { get; set; }
         [DisplayName("Giá bán")]
         public double? Price { get; set; }
         [DisplayName("Giá nhập")]
@@ -34,12 +34,12 @@ namespace KanatStore.BLL.Dto
         [DisplayName("Số lượng có")]
         public int Quantity { get; set; }
         [DisplayName("Đơn vị")]
-        public string Unit { get; set; } = string.Empty;
+        public string Unit { get; set; }
         [DisplayName("Trạng thái")]
         [Required(ErrorMessage ="Trạng thái không được bỏ trống")]
         public string Status { get; set; }
         [DisplayName("Mô tả")]
-        [StringLength(200, ErrorMessage =("Mô tả không được vượt quá 200 kí tự"))]
+        [StringLength(500, ErrorMessage =("Mô tả không được vượt quá 500 kí tự"))]
         public string Description { get; set; } = string.Empty;
         public int CategoryId { get; set; }
         [DisplayName("Danh mục")]

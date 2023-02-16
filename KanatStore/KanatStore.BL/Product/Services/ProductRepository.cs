@@ -105,10 +105,6 @@ namespace KanatStore.BLL.Product.Services
                     }).FirstOrDefault();
         }
 
-        //public void Update(ProductDto pro)
-        //{
-        //    _dbContext.Products.Update(pro);
-        //}
 
         private bool _disposed = false;
         protected virtual void Dispose(bool disposed)
