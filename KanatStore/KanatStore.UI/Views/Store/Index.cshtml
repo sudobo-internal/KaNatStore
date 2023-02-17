@@ -1,0 +1,93 @@
+﻿@model List<KanatStore.BLL.Dto.StoreDto>
+@{
+    ViewBag.Title = "Thông tin cửa hàng";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .mess{
+            font-size: 30px;
+            opacity: 0.3;
+            text-align: center;
+            padding: 100px;
+        }
+        .row.heading{
+            font-weight: bolder;
+            background-color: rgba(0,110, 225, 0.4);
+            padding:18px 0;
+            margin-bottom: 25px;
+            font-size: 18px;
+        }
+        .col-1{
+            text-align: center;
+        }
+
+        .row.listcate {
+            margin-top: -10px;
+            margin-bottom: -10px;
+            height: auto;
+            padding: 20px 0px;
+        }
+        .row.listcate:hover{
+            background-color: rgba(0,110, 225, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Thông tin cửa hàng</h1>
+    <a asp-action="Create">Thêm mới</a>
+    <hr />
+        <div class="row heading">
+            <div class="col-1">
+                STT
+            </div>
+            <div class="col-2">
+                @Html.DisplayNameFor(model=>model.FirstOrDefault().Name)
+            </div>
+            <div class="col-3">
+                @Html.DisplayNameFor(model=>model.FirstOrDefault().Address)
+            </div>
+            <div class="col-2">
+                @Html.DisplayNameFor(model=>model.FirstOrDefault().PhoneNumber)
+            </div>
+            <div class="col-3">
+                @Html.DisplayNameFor(model=>model.FirstOrDefault().Email)
+            </div>
+        </div>
+        @{
+            int i = 1;
+        }
+        @foreach(var item in Model)
+        {
+            <div class="row listcate">
+                <div class="col-1">
+                    @i
+                </div>
+                <div class="col-2">
+                    @Html.DisplayFor(model=>item.Name)
+                </div>
+                <div class="col-3">
+                    @Html.DisplayFor(model=>item.Address)
+                </div>
+                <div class="col-2">
+                    @Html.DisplayFor(model=>item.PhoneNumber)
+                </div>
+                <div class="col-3">
+                    @Html.DisplayFor(model=>item.Email)
+                </div>
+                <div class="col-1">
+                    <a class="fas fa-fw fa-adjust" asp-action="Edit" asp-route-id="@item.Id"></a>|
+                    <a class="fas fa-fw fa-trash" asp-action="Delete" asp-route-id="@item.Id"></a>
+                </div>
+            </div> 
+            i++;
+        }
+        @if (ViewBag.message != null)
+        {
+            <div class="mess">@ViewBag.message</div>
+        }
+</body>
+</html>
+

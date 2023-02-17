@@ -1,0 +1,83 @@
+﻿@model KanatStore.BLL.Dto.StoreDto
+@{
+    ViewBag.Title = "Thêm mới cửa hàng";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .background{
+            /*border: solid 4px black;*/
+            position: relative;
+            width: 100%;
+            height: 500px;
+            margin: 10px;
+            padding: 20px;
+        }
+        .mainInfo{
+            border: solid 4px #4e73df;
+            position: absolute;
+            height: 80%;
+            width: 80%;
+            z-index: 0;
+            padding: 30px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Thêm cửa hàng</h1>
+    <a asp-action="Index">Quay lại</a>
+    
+    <div class="background">
+        @*<div class="title"><p>Cửa hàng</p></div>*@
+        <div class="mainInfo">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row form-group">
+                    <div class="col-3">
+                        Tên cửa hàng: 
+                    </div>
+                    <div class="col-9 ">
+                        <input asp-for="Name" class="form-control"/>
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-3">
+                        Địa chỉ: 
+                    </div>
+                    <div class="col-9 ">
+                        <input asp-for="Address" class="form-control"/>
+                        <span asp-validation-for="Address" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-3">
+                        Số điện thoại:
+                    </div>
+                    <div class="col-9 ">
+                        <input asp-for="PhoneNumber" class="form-control" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-3">
+                        Email: 
+                    </div>
+                    <div class="col-9 ">
+                        <input asp-for="Email" class="form-control" placeholder="email@gmail.com"/>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Thêm mới" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="text-danger">
+        @ViewBag.message
+    </div>
+</body>
+</html>

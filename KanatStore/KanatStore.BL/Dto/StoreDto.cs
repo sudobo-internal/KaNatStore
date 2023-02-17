@@ -21,12 +21,12 @@ namespace KanatStore.BLL.Dto
         public string Address { get; set; }
         [Required(ErrorMessage = "Số điện thoại không được để trống")]
         [DisplayName("Số điện thoại")]
-        [RegularExpression(@"[0-9]{10,11}", ErrorMessage ="Số điện thoại chỉ chứa kí tự số")]
+        [RegularExpression(@"[0-9]{1,12}", ErrorMessage ="Số điện thoại chỉ chứa kí tự số")]
         public string PhoneNumber { get; set; }
-        [Required(ErrorMessage = "Email không được để trống")]
         [EmailAddress]
         [RegularExpression(@"[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}", ErrorMessage ="Vui lòng nhập đúng định dạng địa chỉ email")]
         [DisplayName("Email")]
         public string Email { get; set; }
     }
+
 }
