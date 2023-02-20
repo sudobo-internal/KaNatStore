@@ -4,6 +4,7 @@ using KanatStore.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KanatStore.DAL.Migrations
 {
     [DbContext(typeof(KanatStoreDBContext))]
-    partial class KanatStoreDBContextModelSnapshot : ModelSnapshot
+    [Migration("20230220032954_AddColumnImageInEmployees")]
+    partial class AddColumnImageInEmployees
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,77 +55,64 @@ namespace KanatStore.DAL.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("Id")
-                        .HasColumnOrder(0);
+                        .HasColumnName("Id");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
-                        .HasColumnName("Địa chỉ")
-                        .HasColumnOrder(4);
+                        .HasColumnName("Địa chỉ");
 
                     b.Property<decimal>("Bonus")
                         .HasColumnType("decimal")
-                        .HasColumnName("Thưởng")
-                        .HasColumnOrder(9);
+                        .HasColumnName("Thưởng");
 
                     b.Property<decimal>("Coefficient")
                         .HasColumnType("decimal")
-                        .HasColumnName("Hệ số lương")
-                        .HasColumnOrder(10);
+                        .HasColumnName("Hệ số lương");
 
                     b.Property<string>("ContactNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(12)")
-                        .HasColumnName("Số điện thoại")
-                        .HasColumnOrder(5);
+                        .HasColumnName("Số điện thoại");
 
                     b.Property<DateTime>("DOB")
                         .HasColumnType("DateTime")
-                        .HasColumnName("Ngày sinh")
-                        .HasColumnOrder(2);
+                        .HasColumnName("Ngày sinh");
 
                     b.Property<string>("FullName")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Họ và tên")
-                        .HasColumnOrder(1);
+                        .HasColumnName("Họ và tên");
 
                     b.Property<string>("Gender")
                         .IsRequired()
                         .HasColumnType("nvarchar(10)")
-                        .HasColumnName("Giới tính")
-                        .HasColumnOrder(3);
+                        .HasColumnName("Giới tính");
 
                     b.Property<string>("Identification")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
-                        .HasColumnName("CCCD")
-                        .HasColumnOrder(7);
+                        .HasColumnName("CCCD");
 
                     b.Property<string>("Image")
                         .IsRequired()
                         .HasColumnType("nvarchar(200)")
-                        .HasColumnName("Ảnh")
-                        .HasColumnOrder(12);
+                        .HasColumnName("Ảnh");
 
                     b.Property<decimal>("Salary")
                         .HasColumnType("decimal")
-                        .HasColumnName("Tổng lương")
-                        .HasColumnOrder(11);
+                        .HasColumnName("Tổng lương");
 
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
-                        .HasColumnName("Loại đối tượng")
-                        .HasColumnOrder(6);
+                        .HasColumnName("Loại đối tượng");
 
                     b.Property<double>("WorkDays")
                         .HasColumnType("float")
-                        .HasColumnName("Số ngày làm")
-                        .HasColumnOrder(8);
+                        .HasColumnName("Số ngày làm");
 
                     b.HasKey("Id");
 

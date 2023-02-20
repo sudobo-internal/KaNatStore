@@ -3,16 +3,10 @@
 using KanatStore.BLL.Categories.Services;
 using KanatStore.BLL.Product.Services;
 using KanatStore.DAL;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using System;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
 using KanatStore.BLL.Store.Service;
+using KanatStore.BLL.Employees.Service;
+using KanatStore.BLL.Employee.Service;
 
 namespace KanatStore.UI
 {
@@ -46,7 +40,7 @@ namespace KanatStore.UI
             services.AddScoped<IProductRespository, ProductRepository>();
             services.AddScoped<ICategoryRespository, CategoryRespository>();
             services.AddScoped<IStoreRepository, StoreRepository>();
-
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
         }
 
         //Use this method to configure the HTTP request pipeline
