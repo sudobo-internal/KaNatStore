@@ -12,7 +12,7 @@
     <!-- Custom styles for this template-->
     <link href="/Admin/css/sb-admin-2.min.css" rel="stylesheet">
 </head>
-<body>
+<body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -32,7 +32,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/product/index">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
@@ -298,11 +298,12 @@
             </div>
         </div>
     </div>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="/Admin/js/app.js"></script>
     <script src="~/js/upload.js"></script>
     <!-- Bootstrap core JavaScript-->
-    @*<script src="/Admin/vendor/jquery/jquery.min.js"></script>*@
+    <script src="/Admin/vendor/jquery/jquery.min.js"></script>
     <script src="/Admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
@@ -318,5 +319,13 @@
     <script src="/Admin/js/demo/chart-area-demo.js"></script>
     <script src="/Admin/js/demo/chart-pie-demo.js"></script>
     @RenderSection("JS", required: false)
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".nav-item").click(function(){
+               // $('.nav-item').removeClass("active");
+                $('.nav-item').classList.add("active");
+            });
+        });
+    </script>
 </body>
 </html>
