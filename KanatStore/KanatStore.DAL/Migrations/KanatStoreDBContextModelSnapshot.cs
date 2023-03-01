@@ -44,7 +44,7 @@ namespace KanatStore.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Category");
+                    b.ToTable("Category", (string)null);
                 });
 
             modelBuilder.Entity("KanatStore.DAL.Entities.Employee", b =>
@@ -126,7 +126,7 @@ namespace KanatStore.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Nhân viên");
+                    b.ToTable("Nhân viên", (string)null);
                 });
 
             modelBuilder.Entity("KanatStore.DAL.Entities.Product", b =>
@@ -200,7 +200,7 @@ namespace KanatStore.DAL.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Product");
+                    b.ToTable("Product", (string)null);
                 });
 
             modelBuilder.Entity("KanatStore.DAL.Entities.Store", b =>
@@ -234,7 +234,7 @@ namespace KanatStore.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("StoreInformation");
+                    b.ToTable("StoreInformation", (string)null);
                 });
 
             modelBuilder.Entity("KanatStore.DAL.Entities.Product", b =>
