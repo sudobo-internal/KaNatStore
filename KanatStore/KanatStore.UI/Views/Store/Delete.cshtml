@@ -1,0 +1,79 @@
+﻿@model KanatStore.BLL.Dto.StoreDto
+@{
+    ViewBag.Title = "Xóa danh mục";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .background {
+            /*border: solid 4px black;*/
+            position: relative;
+            width: 100%;
+            height: 500px;
+            margin: 10px;
+            padding: 20px;
+        }
+
+        .mainInfo {
+            border: solid 4px #4e73df;
+            position: absolute;
+            height: 60%;
+            width: 80%;
+            z-index: 0;
+            padding: 30px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bạn chắc chắn muốn xóa?</h1>
+    <hr />
+    <div class="background">
+        <div class="mainInfo">
+            <input asp-for="Id" type="hidden"/>
+            <div class="row form-group">
+                <div class="col-3">
+                    Tên cửa hàng:
+                </div>
+                <div class="col-9 ">
+                    @Html.DisplayFor(Model=>Model.Name)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-3">
+                    Địa chỉ:
+                </div>
+                <div class="col-9 ">
+                    @Html.DisplayFor(Model=>Model.Address)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-3">
+                    Số điện thoại:
+                </div>
+                <div class="col-9 ">
+                    @Html.DisplayFor(Model=>Model.PhoneNumber)
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-3">
+                    Email:
+                </div>
+                <div class="col-9 ">
+                    @Html.DisplayFor(Model=>Model.Email)
+                </div>
+            </div>
+            <hr />
+            <form asp-action="Delete">
+                <input type="submit" value="Xóa" class="btn-danger" />
+                <a asp-action="Index">Quay lại</a>
+            </form>
+        </div>
+    </div>
+    
+    <div style="color:red">
+        @ViewBag.message
+    </div>
+</body>
+</html>
